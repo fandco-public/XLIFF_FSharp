@@ -1,0 +1,44 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"languageName":"csharp","name":"csharp"}]}}
+
+#!markdown
+
+Experiments with parsing XLIFF Examples using F#
+
+#!fsharp
+
+open System
+open System.Xml
+open System.Xml.Schema
+
+// Define a function to handle validation events
+let validationEventHandler (sender: obj) (e: ValidationEventArgs) =
+    printfn "Validation Error: %s" e.Message
+
+let validateXmlWithSchema (xmlPath: string) (xsdPath: string) =
+    // Load the schema
+    let schema = new XmlSchemaSet()
+    schema.Add(null, xsdPath) |> ignore
+
+    // Create a reader settings object
+    let settings = new XmlReaderSettings()
+    settings.Schemas <- schema
+    settings.ValidationType <- ValidationType.Schema
+    settings.ValidationEventHandler.Add(validationEventHandler)
+
+    // Create an XmlReader object with the settings and validate
+    use reader = XmlReader.Create(xmlPath, settings)
+    try
+        while reader.Read() do ()  // Read through the XML document
+        printfn "XML document is valid."
+    with
+    | :? XmlSchemaValidationException as ex ->
+        printfn "Validation failed: %s" ex.Message
+
+#!fsharp
+
+// Example usage:
+let xmlFilePath = "./Examples/v1.2/OpenPasswordGenerator.ar-SA.xlf"
+let xsdFilePath = "schema.xsd"
+validateXmlWithSchema xmlFilePath xsdFilePath
