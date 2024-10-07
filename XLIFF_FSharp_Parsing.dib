@@ -13,18 +13,27 @@ open System.Xml
 open System.Xml.Schema
 
 // Define a function to handle validation events
-let validationEventHandler (sender: obj) (e: ValidationEventArgs) =
-    printfn "Validation Error: %s" e.Message
+// Function to handle validation events
+let validationEventHandler (e: ValidationEventArgs): unit =
+    if e.Severity = XmlSeverityType.Warning then
+        printfn "Warning: %s at line %d, position %d" e.Message e.Exception.LineNumber e.Exception.LinePosition
+    elif e.Severity = XmlSeverityType.Error then
+        printfn "Error: %s at line %d, position %d" e.Message e.Exception.LineNumber e.Exception.LinePosition
+    ()
 
-let validateXmlWithSchema (xmlPath: string) (xsdPath: string) =
+let validateXmlWithSchema (xmlPath: string) (xsdPaths: string list) =
     // Load the schema
     let schema = new XmlSchemaSet()
-    schema.Add(null, xsdPath) |> ignore
+    for xsdPath in xsdPaths do
+        schema.Add(null, xsdPath) |> ignore
 
     // Create a reader settings object
     let settings = new XmlReaderSettings()
     settings.Schemas <- schema
     settings.ValidationType <- ValidationType.Schema
+    
+    // Add the validation event handler
+    // settings.ValidationEventHandler.Add(fun sender e -> validationEventHandler sender e)
     settings.ValidationEventHandler.Add(validationEventHandler)
 
     // Create an XmlReader object with the settings and validate
@@ -39,6 +48,6 @@ let validateXmlWithSchema (xmlPath: string) (xsdPath: string) =
 #!fsharp
 
 // Example usage:
-let xmlFilePath = "./Examples/v1.2/OpenPasswordGenerator.ar-SA.xlf"
-let xsdFilePath = "schema.xsd"
-validateXmlWithSchema xmlFilePath xsdFilePath
+let xmlFilePath = "./Samples/v1.2/OpenPasswordGenerator.ar-SA.xlf"
+let xsdFilePaths = ["./Schemas/v1.2/xliff-core-1.2-transitional.xsd"; "./Schemas/v1.2/xml.xsd"]
+validateXmlWithSchema xmlFilePath xsdFilePaths
