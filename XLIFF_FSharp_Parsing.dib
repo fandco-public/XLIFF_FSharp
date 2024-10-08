@@ -16,9 +16,10 @@ open System.Xml.Schema
 // Function to handle validation events
 let validationEventHandler (e: ValidationEventArgs): unit =
     if e.Severity = XmlSeverityType.Warning then
-        printfn "Warning: %s at line %d, position %d" e.Message e.Exception.LineNumber e.Exception.LinePosition
+        printfn "\nWarning: %s at line %d, position %d" e.Message e.Exception.LineNumber e.Exception.LinePosition
     elif e.Severity = XmlSeverityType.Error then
-        printfn "Error: %s at line %d, position %d" e.Message e.Exception.LineNumber e.Exception.LinePosition
+        printfn "\nError: %s at line %d, position %d" e.Message e.Exception.LineNumber e.Exception.LinePosition
+    else printfn "\nValidation event: %s" e.Message
     ()
 
 let validateXmlWithSchema (xmlPath: string) (xsdPaths: string list) =
@@ -32,9 +33,8 @@ let validateXmlWithSchema (xmlPath: string) (xsdPaths: string list) =
     settings.Schemas <- schema
     settings.ValidationType <- ValidationType.Schema
     
-    // Add the validation event handler
-    // settings.ValidationEventHandler.Add(fun sender e -> validationEventHandler sender e)
-    settings.ValidationEventHandler.Add(validationEventHandler)
+    // // Add the validation event handler
+    //settings.ValidationEventHandler.Add(validationEventHandler)
 
     // Create an XmlReader object with the settings and validate
     use reader = XmlReader.Create(xmlPath, settings)
