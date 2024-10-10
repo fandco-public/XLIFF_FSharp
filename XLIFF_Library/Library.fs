@@ -4,6 +4,10 @@ module XLIFF_v1_2 =
 
     type XLIFF_v1_2_Class() =
 
+        member val schema_path: string list = [ @"Schemas\xliff-core-1.2-transltional.xsd";
+                                                @"Schemas\xml.xsd"
+                                                ]
+
         member val ready : bool = false
         member val document : System.Xml.XmlDocument
 
@@ -12,7 +16,7 @@ module XLIFF_v1_2 =
 
         member this.ReadXliffFile(file : string) =
             printfn "Reading XLIFF file %s" file
-            raise (new System.Exception("Not implemented")) |> ignore
+            raise (new System.Exception("Not implemented"))
 
 
         member this.ReadResxOrReswFile(file) =
