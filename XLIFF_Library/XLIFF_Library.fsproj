@@ -5,11 +5,19 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup />
+
   <ItemGroup>
-    <None Include="Schemas\v1.2\xliff-core-1.2-strict.xsd" />
-    <None Include="Schemas\v1.2\xliff-core-1.2-transitional.xsd" />
-    <None Include="Schemas\v1.2\xml.xsd" />
     <Compile Include="Library.fs" />
+    <None Include="Schemas\v1.2\xliff-core-1.2-strict.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Schemas\v1.2\xliff-core-1.2-transitional.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Schemas\v1.2\xml.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

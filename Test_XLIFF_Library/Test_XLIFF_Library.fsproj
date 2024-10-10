@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -9,16 +9,39 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Samples\v1.2\OpenPasswordGenerator.ar-SA.xlf" />
-    <None Include="Samples\v1.2\OpenPasswordGenerator.de-DE.xlf" />
-    <None Include="Samples\v1.2\OpenPasswordGenerator.fr-FR.xlf" />
-    <None Include="Samples\v1.2\OpenPasswordGenerator.gu-IN.xlf" />
-    <None Include="Samples\v1.2\OpenPasswordGenerator.hi-IN.xlf" />
-    <None Include="Samples\v1.2\OpenPasswordGenerator.ja-JP.xlf" />
-    <None Include="Samples\v1.2\OpenPasswordGenerator.nl-NL.xlf" />
-    <None Include="Samples\v1.2\OpenPasswordGenerator.ru-RU.xlf" />
-    <None Include="Samples\v1.2\Sample_AlmostEverything_1.2_strict.xlf" />
-    <None Include="Samples\v1.2\Sample_AlmostEverything_1.2_transitional.xlf" />
+    <None Include="Samples\v1.2\OpenPasswordGenerator.ar-SA_broken.xlf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Samples\v1.2\OpenPasswordGenerator.ar-SA.xlf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Samples\v1.2\OpenPasswordGenerator.de-DE.xlf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Samples\v1.2\OpenPasswordGenerator.fr-FR.xlf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Samples\v1.2\OpenPasswordGenerator.gu-IN.xlf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Samples\v1.2\OpenPasswordGenerator.hi-IN.xlf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Samples\v1.2\OpenPasswordGenerator.ja-JP.xlf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Samples\v1.2\OpenPasswordGenerator.nl-NL.xlf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Samples\v1.2\OpenPasswordGenerator.ru-RU.xlf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Samples\v1.2\Sample_AlmostEverything_1.2_strict.xlf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Samples\v1.2\Sample_AlmostEverything_1.2_transitional.xlf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Compile Include="Tests.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
