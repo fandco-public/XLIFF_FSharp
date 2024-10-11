@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ApplicationDescription" xml:space="preserve">
+    <value>Konvertieren Sie Ihre Online-Google-/Outlook-Kalenderdaten in ein lesbares Format
+
+Unterstützte Formate : CSV</value>
+  </data>
+  <data name="btnControl_CSVExport" xml:space="preserve">
+    <value>Exportieren...</value>
+  </data>
+  <data name="btnControl_Login" xml:space="preserve">
+    <value>Einloggen...</value>
+  </data>
+  <data name="btnControl_Signout" xml:space="preserve">
+    <value>Abmelden</value>
+  </data>
+  <data name="btnControl_Submit" xml:space="preserve">
+    <value>Senden</value>
+  </data>
+  <data name="cbControl_RecurringCaption" xml:space="preserve">
+    <value>Erweitern Sie KEINE wiederkehrenden Ereignisse</value>
+  </data>
+  <data name="txtControl_DateFrom" xml:space="preserve">
+    <value>Von:</value>
+  </data>
+  <data name="txtControl_DateRangeCaption" xml:space="preserve">
+    <value>Aus dem ausgewählten Kalender Einträge des Zeitraums abrufen ...</value>
+  </data>
+  <data name="txtControl_DateTo" xml:space="preserve">
+    <value>An:</value>
+  </data>
+  <data name="txtControl_MyCalendarsCaption" xml:space="preserve">
+    <value>Meine Kalender</value>
+  </data>
+  <data name="btnControl_AboutProduct" xml:space="preserve">
+    <value>Über das Produkt</value>
+  </data>
+  <data name="btnLicenseContent" xml:space="preserve">
+    <value>Lizenz</value>
+  </data>
+  <data name="btnPrivacyAndSecurityContent" xml:space="preserve">
+    <value>Datenschutz- und Sicherheitsrichtlinie</value>
+  </data>
+  <data name="lblDateFormatContent" xml:space="preserve">
+    <value>Optionen für Datumsformate</value>
+  </data>
+  <data name="mboxDateSelectionBody" xml:space="preserve">
+    <value>Bitte wählen Sie ein entsprechendes Start- und Enddatum aus. Wählen Sie außerdem ein Enddatum aus, das größer als das Startdatum ist.</value>
+  </data>
+  <data name="mboxDateSelectionError" xml:space="preserve">
+    <value>Eingabe erforderlich</value>
+  </data>
+  <data name="mboxErrorTitle" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="mboxNoRowsToExport" xml:space="preserve">
+    <value>Keine Zeilen zum Exportieren</value>
+  </data>
+  <data name="mboxReallyExitBody" xml:space="preserve">
+    <value>Möchten Sie die Anwendung wirklich beenden?</value>
+  </data>
+  <data name="mboxReallyExitWarning" xml:space="preserve">
+    <value>Warnung</value>
+  </data>
+  <data name="mboxUnknownError" xml:space="preserve">
+    <value>Unbekannter Fehler</value>
+  </data>
+  <data name="msgRetrievedText" xml:space="preserve">
+    <value>Abgerufen</value>
+  </data>
+  <data name="msgRetrievingRecords" xml:space="preserve">
+    <value>Abrufen von Datensätzen...</value>
+  </data>
+  <data name="txtAboutProductTitle" xml:space="preserve">
+    <value>Über das Produkt</value>
+  </data>
+  <data name="txtLoginErrorText" xml:space="preserve">
+    <value>Login-Fehler!  Bitte versuchen Sie es erneut.</value>
+  </data>
+  <data name="txtNoRecordsText" xml:space="preserve">
+    <value>Keine Aufzeichnungen</value>
+  </data>
+  <data name="txtPleaseWaitText" xml:space="preserve">
+    <value>Bitte warten...</value>
+  </data>
+  <data name="txtUse24HourTimeContent" xml:space="preserve">
+    <value>Verwenden Sie die 24-Stunden-Zeit</value>
+  </data>
+  <data name="msgExitApplication" xml:space="preserve">
+    <value>Willst du wirklich aussteigen?</value>
+  </data>
+  <data name="msgExitApplicationHeader" xml:space="preserve">
+    <value>Warnung</value>
+  </data>
+  <data name="mitemChangeLanguageHeader" xml:space="preserve">
+    <value>Sprache ändern</value>
+  </data>
+  <data name="Publish_Feature1" xml:space="preserve">
+    <value>- Laden Sie Daten herunter, verfolgen Sie die Arbeitszeiten.</value>
+  </data>
+  <data name="XPublish_MinimumHardwareReq1" xml:space="preserve">
+    <value>Keine externe Hardware erforderlich.</value>
+  </data>
+  <data name="Publish_SearchTerm1" xml:space="preserve">
+    <value>Kalender</value>
+  </data>
+  <data name="Publish_SearchTerm2" xml:space="preserve">
+    <value>Sicherungskopie</value>
+  </data>
+  <data name="Publish_SearchTerm3" xml:space="preserve">
+    <value>Archiv</value>
+  </data>
+  <data name="Publish_SearchTerm5" xml:space="preserve">
+    <value>CSV-Datei</value>
+  </data>
+  <data name="Publish_SearchTerm6" xml:space="preserve">
+    <value>Stundenzettel</value>
+  </data>
+  <data name="Publish_SearchTerm7" xml:space="preserve">
+    <value>Gesamtzeitabrechnung</value>
+  </data>
+  <data name="Publish_ReleaseNotes" xml:space="preserve">
+    <value>5.2.0.0 (12-Jul-2024)
+Nicht nur .csv, Jetzt können Sie Ihre Daten auch in .json-, .xml- und .ics-Format exportieren.
+Fehlerbehebungen.
+
+5.1.19.1 (05-Apr-2024)
+Beschleunigen Sie Downloads mit Threading, Fehlerbehebungen, Verbesserte Übersetzungen.
+
+5.0.15.0 (19-Dez-2023)
+Hinzufügen von Unterstützung für Microsoft/Outlook-Kalender, Fehlerbehebungen, verbesserte Benutzererfahrung
+
+5.0.10.0 (26.09.2023)
+Fehlerbehebungen, verbesserte Benutzererfahrung, definieren Sie Ihr eigenes Datumsformat (Benutzerdefiniert) 
+
+4.0.0.0 (6. Januar 2023)
+Fehlerbehebungen, verbesserte Benutzererfahrung.
+
+3.0.17.0 (14.09.2022)
+Neue Spalten Dauer, TotalHours, TotalMinutes für jede weitere Berechnung nach dem Export.
+Fehlerbehebungen
+
+3.0.11.0 (9. März 2022)
+- Fehlerbehebungen.
+
+3.0.10.0
+- Fehlerbehebungen.
+
+3.0.8.0
+- Benutzer können jetzt ihre Vorschläge abgeben
+- Fehlerbehebungen.
+
+3.0.7.0
+- App in 30+ Sprachen verfügbar.
+- Kleinere Fehlerbehebungen.</value>
+  </data>
+  <data name="Publish_Description" xml:space="preserve">
+    <value>Wir stellen unsere erweiterte Funktion "Exportieren Sie Ihren Kalender" vor! Basierend auf dem Feedback der Benutzer haben wir die Exportfunktionen jetzt über .csv Dateien hinaus erweitert. Zusätzlich zu .csv können Benutzer ihre Daten nahtlos in .json-, .xml- und .ics-Formate exportieren. 
+
+Aber das ist noch nicht alles – wir haben auch die Unterstützung für Google- und Microsoft-Online-Kalender integriert. Verabschieden Sie sich von Plattformbeschränkungen! Egal, ob Sie ein Google Kalender-Liebhaber oder ein eingefleischter Microsoft Outlook-Benutzer sind, Sie können jetzt mühelos Ihren gesamten Zeitplan mit nur wenigen Klicks exportieren.
+
+Möglicherweise haben Sie gesetzliche Geheimhaltungs- und Aufzeichnungsanforderungen oder möchten eine konsistente Schnittstelle für alle Kalender.  Exportieren Sie Ihren Kalender, ohne Ihren Datenschutz oder Ihre Sicherheit zu gefährden.   Ein vollständiges Kalenderarchiv ist unerlässlich - keine unvollständigen Aufzeichnungen!
+
+Während Export Your Calendar kostenlos heruntergeladen werden kann, bieten wir eine Testphase mit begrenzten Ereignisexporten an. Gegen eine geringe Gebühr können Sie unbegrenzte Exporte freischalten und erhalten Zugriff auf alle Funktionen. Bitte beachten Sie, dass dies keine kostenlose Software ist und ohne Kauf Downloads auf 10 Zeilen begrenzt sind.
+
+Laden Sie jetzt "Exportieren Sie Ihre Kalender" herunter und erleben Sie den Komfort einer nahtlosen Datenverwaltung!
+
+"Wir wissen, wie wichtig das Feedback der Nutzer ist. Wenn Sie Vorschläge für neue Exportformate oder -funktionen haben, zögern Sie bitte nicht, uns per E-Mail (team@freytag.us) zu kontaktieren. Ihr Input hilft uns, unser Produkt kontinuierlich zu verbessern, um Ihre Bedürfnisse besser zu erfüllen."</value>
+  </data>
+  <data name="Grid_Attendees" xml:space="preserve">
+    <value>Teilnehmer</value>
+  </data>
+  <data name="Grid_Description" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="Grid_EndDate" xml:space="preserve">
+    <value>Enddatum</value>
+  </data>
+  <data name="Grid_Location" xml:space="preserve">
+    <value>Ort</value>
+  </data>
+  <data name="Grid_Recurrence" xml:space="preserve">
+    <value>Wiederholung</value>
+  </data>
+  <data name="Grid_StartDate" xml:space="preserve">
+    <value>Startdatum</value>
+  </data>
+  <data name="Grid_Summary" xml:space="preserve">
+    <value>Zusammenfassung</value>
+  </data>
+  <data name="rbLanguageDates" xml:space="preserve">
+    <value>Daten basierend auf der ausgewählten Sprache</value>
+  </data>
+  <data name="rbRawDates" xml:space="preserve">
+    <value>ISO 8601-Format</value>
+  </data>
+  <data name="rbUseEnglishDates" xml:space="preserve">
+    <value>Verwenden Sie das en-US-Format</value>
+  </data>
+  <data name="txtHowToUseHelp" xml:space="preserve">
+    <value>Wie benutzt man die App?</value>
+  </data>
+  <data name="txtRateUsOnStore" xml:space="preserve">
+    <value>Bewerten Sie uns im Shop</value>
+  </data>
+  <data name="Publish_Feature2" xml:space="preserve">
+    <value>- Reduzieren Sie Ihren Compliance-Aufwand.</value>
+  </data>
+  <data name="Publish_Feature3" xml:space="preserve">
+    <value>- Anpassbare Datumsformatierungsoptionen</value>
+  </data>
+  <data name="Publish_Feature4" xml:space="preserve">
+    <value>- Die App wird lokal ausgeführt, um den Datenschutz zu gewährleisten.</value>
+  </data>
+  <data name="Publish_Feature5" xml:space="preserve">
+    <value>- Feedback und schneller Produktsupport</value>
+  </data>
+  <data name="Publish_Feature6" xml:space="preserve">
+    <value>- Unterstützung für 70+ Sprachen.</value>
+  </data>
+  <data name="btnClose" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
+  <data name="btnSubmitSuggestion" xml:space="preserve">
+    <value>Senden</value>
+  </data>
+  <data name="tbEnterEmail" xml:space="preserve">
+    <value>E-Mail-Adresse eingeben</value>
+  </data>
+  <data name="tbLine1" xml:space="preserve">
+    <value>Benötigen Sie Hilfe oder haben Sie eine Funktionsanfrage, teilen Sie uns dies bitte mit!</value>
+  </data>
+  <data name="tbLine2" xml:space="preserve">
+    <value>-- Wenn Sie Hilfe benötigen, stellen Sie eine Supportanfrage. Oder Wir würden uns freuen zu hören, wenn Sie Feedback oder Vorschläge geben möchten, um eine Funktionsanfrage bitten oder sogar die Anwendung an Ihre Bedürfnisse anpassen müssen.</value>
+  </data>
+  <data name="tbLine3" xml:space="preserve">
+    <value>-- Bemerken Sie einen Fehler? Lassen Sie es uns wissen, wir werden es reparieren und Ihnen möglicherweise ein kostenloses* Exemplar geben.</value>
+  </data>
+  <data name="tbReEnterEmail" xml:space="preserve">
+    <value>E-Mail-Adresse erneut eingeben</value>
+  </data>
+  <data name="tbSuggestions" xml:space="preserve">
+    <value>Ihre Nachricht</value>
+  </data>
+  <data name="tbCustomNoticeMessage" xml:space="preserve">
+    <value>"Sehr geehrter Benutzer,
+
+Diese App erfordert bestimmte Berechtigungen von Ihnen, um effektiv zu funktionieren. Auf dem folgenden Bildschirm werden Optionen angezeigt, mit denen Sie dieser App grundlegende Leseberechtigungen für den Zugriff auf Ihre Kalenderdaten erteilen können (wie in diesem Bild gezeigt).
+
+Bitte stellen Sie sicher, dass Sie alle bereitgestellten Kontrollkästchen (falls vorhanden) aktivieren und dann fortfahren, indem Sie auf die Schaltfläche "Weiter" oder "Akzeptieren" klicken.
+
+Wenn Sie Bedenken haben, machen Sie bitte einen Screenshot und senden Sie uns eine E-Mail an support@freytag.us</value>
+  </data>
+  <data name="tbCustomErrorMessage" xml:space="preserve">
+    <value>Sie haben dieser App während des Google- oder Microsoft-Anmeldezustimmungsbildschirms nicht die erforderliche Berechtigung erteilt. 
+
+Bitte erteilen Sie die erforderliche Erlaubnis, indem Sie alle Kontrollkästchen (sofern zutreffend) aktivieren, die auf dem Bildschirm angezeigt werden, auf dem steht: "FandCO Export Your Calendar wants access to your Google or Microsoft Account", wie im Screenshot zu sehen 
+
+Wenn Sie immer noch Fehler wie "Anforderung hatte unzureichende Authentifizierungsbereiche" oder "Der Anrufer hat keine Berechtigung zur Anforderung" erhalten, machen Sie bitte einen Screenshot und senden Sie uns eine E-Mail an support@freytag.us</value>
+  </data>
+  <data name="Grid_Duration" xml:space="preserve">
+    <value>Dauer</value>
+  </data>
+  <data name="Grid_TotalHours" xml:space="preserve">
+    <value>Gesamtstunden</value>
+  </data>
+  <data name="Grid_TotalMinutes" xml:space="preserve">
+    <value>Minuten gesamt</value>
+  </data>
+  <data name="lblChooseCategory" xml:space="preserve">
+    <value>Wählen Sie eine Kategorie</value>
+  </data>
+  <data name="txtErrorMessageTitle" xml:space="preserve">
+    <value>Fehler: Screenshot machen und per E-Mail an support@freytag.us senden</value>
+  </data>
+  <data name="txtInternetNotAvailableError" xml:space="preserve">
+    <value>Bitte stellen Sie sicher, dass Ihr Computer mit dem Internet verbunden ist. Für die Registrierung ist eine Internetverbindung erforderlich</value>
+  </data>
+  <data name="btnBuyRenewSubscription" xml:space="preserve">
+    <value>Aktivieren Sie alle Funktionen...</value>
+  </data>
+  <data name="tbBuyPurchase" xml:space="preserve">
+    <value>Kaufen / Kaufen</value>
+  </data>
+  <data name="tbCustomDateFormat" xml:space="preserve">
+    <value>Benutzerdefiniertes Datums- und Uhrzeitformat.</value>
+  </data>
+  <data name="LanguageChangeWarningText" xml:space="preserve">
+    <value>Diese Aktion startet die Anwendung neu, sind Sie sicher?</value>
+  </data>
+  <data name="LanguageChangeWarningTextTitle" xml:space="preserve">
+    <value>Warnung...</value>
+  </data>
+  <data name="RecurringEventOccuredMessage" xml:space="preserve">
+    <value>Daten haben wiederkehrende Ereignisse.  Verwenden Sie das Kontrollkästchen, um diese Ereignisse NICHT zu erweitern.</value>
+  </data>
+  <data name="CustomDateFormatExampleOuputLabel" xml:space="preserve">
+    <value>Beispiel-Ausgabe:</value>
+  </data>
+  <data name="codeLanguages_IsAvailable" xml:space="preserve">
+    <value>ist verfügbar</value>
+  </data>
+  <data name="codeLanguages_IsNotAvailable" xml:space="preserve">
+    <value>ist nicht verfügbar.</value>
+  </data>
+  <data name="codeLanuage_Exception" xml:space="preserve">
+    <value>auf dem Computer nicht verfügbar ist oder ein ungültiger Kulturbezeichner ist.</value>
+  </data>
+  <data name="codeLicense_Addon" xml:space="preserve">
+    <value>Klicken Sie hier, um Ihre Lizenzinformationen anzuzeigen.</value>
+  </data>
+  <data name="codeLicense_Full" xml:space="preserve">
+    <value>Klicken Sie hier, um Ihre Lizenzinformationen anzuzeigen.</value>
+  </data>
+  <data name="codeLicense_Limited" xml:space="preserve">
+    <value>Lizenz: Eingeschränkte Funktionen, Nur begrenzte Zeilen exportieren, Kaufen, um die unbegrenzte Exportfunktion zu aktivieren.</value>
+  </data>
+  <data name="codeProgressTaskRetrieved" xml:space="preserve">
+    <value>Aufgabe {0}, abgerufen {1}%</value>
+  </data>
+  <data name="codeStorePurchaseStatus_AlreadyPurchased" xml:space="preserve">
+    <value>Sie haben dieses Produkt bereits gekauft.</value>
+  </data>
+  <data name="codeStorePurchaseStatus_Default" xml:space="preserve">
+    <value>Das Produkt wurde aufgrund eines unbekannten Fehlers nicht gekauft.</value>
+  </data>
+  <data name="codeStorePurchaseStatus_NetworkError" xml:space="preserve">
+    <value>Das Produkt wurde aufgrund eines Netzwerkfehlers nicht gekauft.</value>
+  </data>
+  <data name="codeStorePurchaseStatus_NotFound" xml:space="preserve">
+    <value>Fehler unbekannt: Abonnementtyp nicht gefunden.</value>
+  </data>
+  <data name="codeStorePurchaseStatus_NotPurchased" xml:space="preserve">
+    <value>Das Produkt wurde nicht gekauft, es wurde möglicherweise storniert.</value>
+  </data>
+  <data name="codeStorePurchaseStatus_ServerError" xml:space="preserve">
+    <value>Das Produkt wurde aufgrund eines Serverfehlers nicht gekauft.</value>
+  </data>
+  <data name="codeStorePurchaseStatus_Succeeded" xml:space="preserve">
+    <value>Produkt erfolgreich gekauft.</value>
+  </data>
+  <data name="codeStorePurchaseUpdateAppSettings_Exception" xml:space="preserve">
+    <value>Bei Ihrem Kauf ist ein Fehler aufgetreten.\n\nSie müssen sich an den Support unter team@freytag.us wenden, um dieses Problem zu beheben.\n\nFehlermeldung:</value>
+  </data>
+  <data name="txtEnterDateFormat" xml:space="preserve">
+    <value>Klicken Sie hier, um das Datumsformat auszuwählen oder einzugeben...</value>
+  </data>
+  <data name="txtRegisteredBy" xml:space="preserve">
+    <value>Registriert von</value>
+  </data>
+  <data name="Publish_Feature8" xml:space="preserve">
+    <value>- Keine Malware oder Werbung</value>
+  </data>
+  <data name="InsufficientAuthenticationScopesError" xml:space="preserve">
+    <value>Versuchen Sie es erneut: Es tut uns leid zu sagen, dass Ihre Anmeldung erfolgreich war, ABER Sie haben dieser App während des Google Login-Zustimmungsbildschirms nicht die erforderlichen Berechtigungen erteilt. Bitte erteilen Sie die erforderlichen Berechtigungen, indem Sie alle Kontrollkästchen aktivieren, die auf dem Bildschirm angezeigt werden, auf dem steht: "F&amp;CO Export Google Kalender fordert Zugriff auf Ihr Google-Konto an". Die Anwendung kann nicht fortgesetzt werden, ohne dass Sie die erforderlichen Berechtigungen erteilt haben.</value>
+  </data>
+  <data name="mboxNoExportFormat" xml:space="preserve">
+    <value>Bitte wählen Sie ein Exportformat aus.</value>
+  </data>
+  <data name="Publish_Feature7" xml:space="preserve">
+    <value>- Unterstütztes Exportformat ( .csv, .xml, .json, .ics )</value>
+  </data>
+  <data name="Publish_AdditionalLicenseTerms" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="Publish_CopyrightTrademarkInformation" xml:space="preserve">
+    <value>Copyright Freytag &amp; Company, LLC, 2016-2024</value>
+  </data>
+  <data name="Publish_SearchTerm4" xml:space="preserve">
+    <value>Google, Microsoft</value>
+  </data>
+  <data name="Publish_PrivacyPolicyUrl" xml:space="preserve">
+    <value>https://freytag.us/Privacy-And-Security-Policy</value>
+  </data>
+  <data name="Publish_SupportContactInfo" xml:space="preserve">
+    <value>team@freytag.us</value>
+  </data>
+  <data name="Publish_Website" xml:space="preserve">
+    <value>https://freytag.us/ExportGoogleCalendar</value>
+  </data>
+  <data name="btnSuggestions" xml:space="preserve">
+    <value>Support &amp; Feedback</value>
+  </data>
+</root>

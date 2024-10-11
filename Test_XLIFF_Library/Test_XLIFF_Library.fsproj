@@ -9,6 +9,53 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="TEST_OUTPUT\" />  
+
+    <None Include="Samples\RESW\de\Resources.resw">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Samples\RESW\en\Resources.resw">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Samples\RESW\en-US\Resources.resw">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Samples\RESW\es\Resources.resw">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Samples\RESW\fr\Resources.resw">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Samples\RESW\hi\Resources.resw">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Samples\RESW\hu\Resources.resw">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Samples\RESW\zh-hans\Resources.resw">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Samples\RESW\zh-hant\Resources.resw">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+
+    <Folder Include="Samples\RESX\" />
+    <!-- 
+      <Folder Include="Samples\RESW\" />
+      <Folder Include="Samples\RESW\de\" />
+      <Folder Include="Samples\RESW\en\" />
+      <Folder Include="Samples\RESW\en-US\" />
+      <Folder Include="Samples\RESW\es\" />
+      <Folder Include="Samples\RESW\fr\" />
+      <Folder Include="Samples\RESW\hi\" />
+      <Folder Include="Samples\RESW\hu\" />
+      <Folder Include="Samples\RESW\zh-hans\" />
+      <Folder Include="Samples\RESW\zh-hant\" />
+    -->
+
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="Samples\v1.2\OpenPasswordGenerator.ar-SA_broken.xlf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -42,7 +89,9 @@
     <None Include="Samples\v1.2\Sample_AlmostEverything_1.2_transitional.xlf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Compile Include="Tests.fs" />
+    <Compile Include="Tests_RESX_RESW.fs" />
+
+    <Compile Include="Tests_XLIFF.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
@@ -58,8 +107,38 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Samples\RESW\" />
-    <Folder Include="Samples\RESX\" />
+    <EmbeddedResource Update="Samples\RESX\Resources.de.body_has_name-error.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Samples\RESX\Resources.de.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Samples\RESX\Resources.de.xsd_has_name-error.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Samples\RESX\Resources.en.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Samples\RESX\Resources.es.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Samples\RESX\Resources.fr.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Samples\RESX\Resources.hi.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Samples\RESX\Resources.hu.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Samples\RESX\Resources.zh-Hans.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Samples\RESX\Resources.zh-Hant.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
+
+
 
 </Project>

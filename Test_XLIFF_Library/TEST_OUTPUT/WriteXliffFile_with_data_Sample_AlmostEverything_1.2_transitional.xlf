@@ -9,12 +9,12 @@
          </skl>
          <phase-group>
             <phase phase-name="String" process-name="String" company-name="String" tool="String" date="2001-12-17T09:30:47-05:00" job-id="String" contact-name="String" contact-email="String" contact-phone="String">
-               <note xml:lang="en-us" priority="1" from="String">String</note>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
             </phase>
             <phase phase-name="NMTOKEN" process-name="String" company-name="String" tool="String" date="2001-12-17T09:30:47-05:00" job-id="String" contact-name="String" contact-email="String" contact-phone="String">
-               <note xml:lang="en-us" priority="1" from="String">String</note>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
             </phase>
          </phase-group>
          <glossary>
@@ -25,12 +25,12 @@
          </glossary>
       </header>
       <body>
-         <trans-unit id="_1_ski_041" approved="yes" translate="yes" reformat="coord font" xml:space="default" datatype="plaintext" ts="String" phase-name="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String">
-            <source xml:lang="en-us" ts="String">Text <g id="_1_ski_040">text</g>TEXT<bpt id="_1_ski_139">code<sub>Text</sub>
+         <trans-unit id="_1_ski_041" approved="yes" translate="yes" reformat="coord font" xml:space="default" datatype="plaintext" ts="String" phase-name="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String" merged-trans="yes">
+            <source xml:lang="en-us" ts="String">Text <g id="_1_ski_040" clone="yes">text</g>TEXT<bpt id="_1_ski_139">code<sub>Text</sub>
                </bpt>TEXT<ept id="_1_ski_238">code</ept>TEXT<ph id="_1_ski_337" />TEXT<it id="_1_ski_436" pos="open">code</it>TEXT<mrk mtype="x-test">text</mrk>
-               <x id="_1_ski_535" />TEXT<bx id="_1_ski_634" />TEXT<ex id="_1_ski_733" />TEXT.</source>
-            <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text <g id="_1_ski_832">text</g>TEXT<bpt id="_1_ski_931">code</bpt>TEXT<ept id="_1_ski_1030">code</ept>TEXT<ph id="_1_ski_1129" />TEXT<it id="_1_ski_1228" pos="open">code</it>TEXT<mrk mtype="x-test">text</mrk>
-               <x id="_1_ski_1327" />TEXT<bx id="_1_ski_1426" />TEXT<ex id="_1_ski_1525" />TEXT.</target>
+               <x id="_1_ski_535" clone="yes" />TEXT<bx id="_1_ski_634" clone="yes" />TEXT<ex id="_1_ski_733" />TEXT.</source>
+            <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text <g id="_1_ski_832" clone="yes">text</g>TEXT<bpt id="_1_ski_931">code</bpt>TEXT<ept id="_1_ski_1030">code</ept>TEXT<ph id="_1_ski_1129" />TEXT<it id="_1_ski_1228" pos="open">code</it>TEXT<mrk mtype="x-test">text</mrk>
+               <x id="_1_ski_1327" clone="yes" />TEXT<bx id="_1_ski_1426" clone="yes" />TEXT<ex id="_1_ski_1525" />TEXT.</target>
             <context-group name="_ski_40119" crc="NMTOKEN" purpose="location x-test match x-abcdef">
                <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -55,13 +55,13 @@
                <prop prop-type="String" xml:lang="en-us">String</prop>
                <prop prop-type="String" xml:lang="en-us">String</prop>
             </prop-group>
-            <note xml:lang="en-us" priority="1" from="String">String</note>
-            <note xml:lang="en-us" priority="1" from="String">String</note>
-            <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">
+            <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+            <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+            <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" alttranstype="proposal">
                <source xml:lang="en-us" ts="String">Text <bpt id="_1_ski_1624">code<sub>Text<bpt id="_1_ski_1623">subcode</bpt>TEXT<ept id="_1_ski_1722">subcode</ept>TEXT.</sub>
                   </bpt>TEXT<ept id="_1_ski_1921">code</ept>TEXT<ph id="_1_ski_2020">code</ph>TEXT.</source>
-               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
-               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
+               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
+               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
                <context-group name="_ski_46113" crc="NMTOKEN" purpose="location">
                   <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                   <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -78,13 +78,13 @@
                   <prop prop-type="String" xml:lang="en-us">String</prop>
                   <prop prop-type="String" xml:lang="en-us">String</prop>
                </prop-group>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
             </alt-trans>
-            <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">
+            <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" alttranstype="proposal">
                <source xml:lang="en-us" ts="String">Text</source>
-               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
-               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
+               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
+               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
                <context-group name="_ski_410109" crc="NMTOKEN" purpose="location">
                   <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                   <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -101,27 +101,27 @@
                   <prop prop-type="String" xml:lang="en-us">String</prop>
                   <prop prop-type="String" xml:lang="en-us">String</prop>
                </prop-group>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
             </alt-trans>
          </trans-unit>
-         <trans-unit id="_1_ski_2203">
+         <trans-unit id="_1_ski_2203" translate="yes" reformat="yes" xml:space="preserve" size-unit="pixel" merged-trans="yes">
             <source>
                <mrk mtype="protected">XLIFF
                </mrk>stands for
                <mrk mtype="protected">XML Localisation Interchange File Format
                </mrk>.
             </source>
-            <target>
+            <target equiv-trans="yes">
                <mrk mtype="protected">XLIFF
                </mrk>in any language stands for
                <mrk mtype="protected">XML Localisation Interchange File Format
                </mrk>.
             </target>
          </trans-unit>       
-         <trans-unit id="_1_ski_2219" approved="yes" translate="yes" reformat="yes" xml:space="default" datatype="plaintext" ts="String" phase-name="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String">
+         <trans-unit id="_1_ski_2219" approved="yes" translate="yes" reformat="yes" xml:space="default" datatype="plaintext" ts="String" phase-name="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String" merged-trans="yes">
             <source xml:lang="en-us" ts="String">Text</source>
-            <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
+            <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
             <context-group name="_ski_414105" crc="NMTOKEN" purpose="location">
                <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -146,12 +146,12 @@
                <prop prop-type="String" xml:lang="en-us">String</prop>
                <prop prop-type="String" xml:lang="en-us">String</prop>
             </prop-group>
-            <note xml:lang="en-us" priority="1" from="String">String</note>
-            <note xml:lang="en-us" priority="1" from="String">String</note>
-            <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">
+            <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+            <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+            <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" alttranstype="proposal">
                <source xml:lang="en-us" ts="String">Text</source>
-               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
-               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
+               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
+               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
                <context-group name="_ski_42099" crc="NMTOKEN" purpose="location">
                   <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                   <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -168,13 +168,13 @@
                   <prop prop-type="String" xml:lang="en-us">String</prop>
                   <prop prop-type="String" xml:lang="en-us">String</prop>
                </prop-group>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
             </alt-trans>
-            <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">
+            <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" alttranstype="proposal">
                <source xml:lang="en-us" ts="String">Text</source>
-               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
-               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
+               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
+               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
                <context-group name="_ski_42495" crc="NMTOKEN" purpose="location">
                   <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                   <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -191,11 +191,11 @@
                   <prop prop-type="String" xml:lang="en-us">String</prop>
                   <prop prop-type="String" xml:lang="en-us">String</prop>
                </prop-group>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
             </alt-trans>
          </trans-unit>
-         <group id="_1_ski_2318" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" translate="yes" reformat="yes" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String">
+         <group id="_1_ski_2318" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" translate="yes" reformat="yes" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String" merged-trans="no">
             <context-group name="_ski_42891" crc="NMTOKEN" purpose="location">
                <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -220,13 +220,13 @@
                <prop prop-type="String" xml:lang="en-us">String</prop>
                <prop prop-type="String" xml:lang="en-us">String</prop>
             </prop-group>
-            <note xml:lang="en-us" priority="1" from="String">String</note>
-            <note xml:lang="en-us" priority="1" from="String">String</note>
-            <trans-unit id="_1_ski_2317">
+            <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+            <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+            <trans-unit id="_1_ski_2317" translate="yes" reformat="yes" xml:space="preserve" size-unit="pixel" merged-trans="yes">
                <source xml:lang="en">Text</source>
             </trans-unit>
          </group>
-         <group id="_1_ski_2516" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" translate="yes" reformat="yes" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String">
+         <group id="_1_ski_2516" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" translate="yes" reformat="yes" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String" merged-trans="no">
             <context-group name="_ski_43485" crc="NMTOKEN" purpose="location">
                <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -251,9 +251,9 @@
                <prop prop-type="String" xml:lang="en-us">String</prop>
                <prop prop-type="String" xml:lang="en-us">String</prop>
             </prop-group>
-            <note xml:lang="en-us" priority="1" from="String">String</note>
-            <note xml:lang="en-us" priority="1" from="String">String</note>
-            <trans-unit id="_1_ski_2515">
+            <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+            <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+            <trans-unit id="_1_ski_2515" translate="yes" reformat="yes" xml:space="preserve" size-unit="pixel" merged-trans="yes">
                <source xml:lang="en">Text</source>
             </trans-unit>
          </group>
@@ -288,11 +288,11 @@
                <prop prop-type="String" xml:lang="en-us">String</prop>
                <prop prop-type="String" xml:lang="en-us">String</prop>
             </prop-group>
-            <note xml:lang="en-us" priority="1" from="String">String</note>
-            <note xml:lang="en-us" priority="1" from="String">String</note>
-            <trans-unit id="_1_ski_2713" approved="yes" translate="yes" reformat="yes" xml:space="default" datatype="plaintext" ts="String" phase-name="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String">
+            <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+            <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+            <trans-unit id="_1_ski_2713" approved="yes" translate="yes" reformat="yes" xml:space="default" datatype="plaintext" ts="String" phase-name="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String" merged-trans="yes">
                <source xml:lang="en-us" ts="String">Text</source>
-               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
+               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
                <context-group name="_ski_44673" crc="NMTOKEN" purpose="location">
                   <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                   <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -317,12 +317,12 @@
                   <prop prop-type="String" xml:lang="en-us">String</prop>
                   <prop prop-type="String" xml:lang="en-us">String</prop>
                </prop-group>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
-               <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+               <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" alttranstype="proposal">
                   <source xml:lang="en-us" ts="String">Text</source>
-                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
-                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
+                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
+                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
                   <context-group name="_ski_45267" crc="NMTOKEN" purpose="location">
                      <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                      <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -339,13 +339,13 @@
                      <prop prop-type="String" xml:lang="en-us">String</prop>
                      <prop prop-type="String" xml:lang="en-us">String</prop>
                   </prop-group>
-                  <note xml:lang="en-us" priority="1" from="String">String</note>
-                  <note xml:lang="en-us" priority="1" from="String">String</note>
+                  <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+                  <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
                </alt-trans>
-               <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">
+               <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" alttranstype="proposal">
                   <source xml:lang="en-us" ts="String">Text</source>
-                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
-                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
+                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
+                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
                   <context-group name="_ski_45663" crc="NMTOKEN" purpose="location">
                      <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                      <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -362,13 +362,13 @@
                      <prop prop-type="String" xml:lang="en-us">String</prop>
                      <prop prop-type="String" xml:lang="en-us">String</prop>
                   </prop-group>
-                  <note xml:lang="en-us" priority="1" from="String">String</note>
-                  <note xml:lang="en-us" priority="1" from="String">String</note>
+                  <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+                  <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
                </alt-trans>
             </trans-unit>
-            <trans-unit id="_1_ski_2812" approved="yes" translate="yes" reformat="yes" xml:space="default" datatype="plaintext" ts="String" phase-name="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String">
+            <trans-unit id="_1_ski_2812" approved="yes" translate="yes" reformat="yes" xml:space="default" datatype="plaintext" ts="String" phase-name="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String" merged-trans="yes">
                <source xml:lang="en-us" ts="String">Text</source>
-               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
+               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
                <context-group name="_ski_46059" crc="NMTOKEN" purpose="location">
                   <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                   <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -393,12 +393,12 @@
                   <prop prop-type="String" xml:lang="en-us">String</prop>
                   <prop prop-type="String" xml:lang="en-us">String</prop>
                </prop-group>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
-               <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+               <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" alttranstype="proposal">
                   <source xml:lang="en-us" ts="String">Text</source>
-                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
-                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
+                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
+                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
                   <context-group name="_ski_46653" crc="NMTOKEN" purpose="location">
                      <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                      <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -415,13 +415,13 @@
                      <prop prop-type="String" xml:lang="en-us">String</prop>
                      <prop prop-type="String" xml:lang="en-us">String</prop>
                   </prop-group>
-                  <note xml:lang="en-us" priority="1" from="String">String</note>
-                  <note xml:lang="en-us" priority="1" from="String">String</note>
+                  <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+                  <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
                </alt-trans>
-               <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">
+               <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" alttranstype="proposal">
                   <source xml:lang="en-us" ts="String">Text</source>
-                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
-                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
+                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
+                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
                   <context-group name="_ski_47049" crc="NMTOKEN" purpose="location">
                      <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                      <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -438,8 +438,8 @@
                      <prop prop-type="String" xml:lang="en-us">String</prop>
                      <prop prop-type="String" xml:lang="en-us">String</prop>
                   </prop-group>
-                  <note xml:lang="en-us" priority="1" from="String">String</note>
-                  <note xml:lang="en-us" priority="1" from="String">String</note>
+                  <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+                  <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
                </alt-trans>
             </trans-unit>
          </bin-unit>
@@ -474,11 +474,11 @@
                <prop prop-type="String" xml:lang="en-us">String</prop>
                <prop prop-type="String" xml:lang="en-us">String</prop>
             </prop-group>
-            <note xml:lang="en-us" priority="1" from="String">String</note>
-            <note xml:lang="en-us" priority="1" from="String">String</note>
-            <trans-unit id="_1_ski_3010" approved="yes" translate="yes" reformat="yes" xml:space="default" datatype="plaintext" ts="String" phase-name="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String">
+            <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+            <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+            <trans-unit id="_1_ski_3010" approved="yes" translate="yes" reformat="yes" xml:space="default" datatype="plaintext" ts="String" phase-name="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String" merged-trans="yes">
                <source xml:lang="en-us" ts="String">Text</source>
-               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
+               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
                <context-group name="_ski_48039" crc="NMTOKEN" purpose="location">
                   <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                   <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -503,12 +503,12 @@
                   <prop prop-type="String" xml:lang="en-us">String</prop>
                   <prop prop-type="String" xml:lang="en-us">String</prop>
                </prop-group>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
-               <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+               <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" alttranstype="proposal">
                   <source xml:lang="en-us" ts="String">Text</source>
-                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
-                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
+                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
+                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
                   <context-group name="_ski_48633" crc="NMTOKEN" purpose="location">
                      <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                      <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -525,13 +525,13 @@
                      <prop prop-type="String" xml:lang="en-us">String</prop>
                      <prop prop-type="String" xml:lang="en-us">String</prop>
                   </prop-group>
-                  <note xml:lang="en-us" priority="1" from="String">String</note>
-                  <note xml:lang="en-us" priority="1" from="String">String</note>
+                  <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+                  <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
                </alt-trans>
-               <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">
+               <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" alttranstype="proposal">
                   <source xml:lang="en-us" ts="String">Text</source>
-                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
-                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
+                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
+                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
                   <context-group name="_ski_49029" crc="NMTOKEN" purpose="location">
                      <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                      <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -548,13 +548,13 @@
                      <prop prop-type="String" xml:lang="en-us">String</prop>
                      <prop prop-type="String" xml:lang="en-us">String</prop>
                   </prop-group>
-                  <note xml:lang="en-us" priority="1" from="String">String</note>
-                  <note xml:lang="en-us" priority="1" from="String">String</note>
+                  <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+                  <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
                </alt-trans>
             </trans-unit>
-            <trans-unit id="_1_ski_319" approved="yes" translate="yes" reformat="yes" xml:space="default" datatype="plaintext" ts="String" phase-name="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String">
+            <trans-unit id="_1_ski_319" approved="yes" translate="yes" reformat="yes" xml:space="default" datatype="plaintext" ts="String" phase-name="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String" merged-trans="yes">
                <source xml:lang="en-us" ts="String">Text</source>
-               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
+               <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
                <context-group name="_ski_49425" crc="NMTOKEN" purpose="location">
                   <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                   <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -579,12 +579,12 @@
                   <prop prop-type="String" xml:lang="en-us">String</prop>
                   <prop prop-type="String" xml:lang="en-us">String</prop>
                </prop-group>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
-               <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+               <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" alttranstype="proposal">
                   <source xml:lang="en-us" ts="String">Text</source>
-                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
-                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
+                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
+                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
                   <context-group name="_ski_410019" crc="NMTOKEN" purpose="location">
                      <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                      <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -601,13 +601,13 @@
                      <prop prop-type="String" xml:lang="en-us">String</prop>
                      <prop prop-type="String" xml:lang="en-us">String</prop>
                   </prop-group>
-                  <note xml:lang="en-us" priority="1" from="String">String</note>
-                  <note xml:lang="en-us" priority="1" from="String">String</note>
+                  <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+                  <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
                </alt-trans>
-               <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">
+               <alt-trans match-quality="String" tool="String" crc="NMTOKEN" xml:lang="en-us" origin="String" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" alttranstype="proposal">
                   <source xml:lang="en-us" ts="String">Text</source>
-                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
-                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN">Text</target>
+                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
+                  <target state="needs-translation" phase-name="NMTOKEN" xml:lang="en-us" ts="String" restype="button" resname="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" equiv-trans="yes">Text</target>
                   <context-group name="_ski_410415" crc="NMTOKEN" purpose="location">
                      <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                      <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -624,8 +624,8 @@
                      <prop prop-type="String" xml:lang="en-us">String</prop>
                      <prop prop-type="String" xml:lang="en-us">String</prop>
                   </prop-group>
-                  <note xml:lang="en-us" priority="1" from="String">String</note>
-                  <note xml:lang="en-us" priority="1" from="String">String</note>
+                  <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+                  <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
                </alt-trans>
             </trans-unit>
          </bin-unit>
@@ -638,12 +638,12 @@
          </skl>
          <phase-group>
             <phase phase-name="String" process-name="String" company-name="String" tool="String" date="2001-12-17T09:30:47-05:00" job-id="String" contact-name="String" contact-email="String" contact-phone="String">
-               <note xml:lang="en-us" priority="1" from="String">String</note>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
             </phase>
             <phase phase-name="_ski_4838" process-name="String" company-name="String" tool="String" date="2001-12-17T09:30:47-05:00" job-id="String" contact-name="String" contact-email="String" contact-phone="String">
-               <note xml:lang="en-us" priority="1" from="String">String</note>
-               <note xml:lang="en-us" priority="1" from="String">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+               <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
             </phase>
          </phase-group>
          <glossary>
@@ -654,7 +654,7 @@
          </glossary>
       </header>
       <body>
-         <group id="_1_ski_338" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" translate="yes" reformat="yes" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String">
+         <group id="_1_ski_338" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" translate="yes" reformat="yes" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String" merged-trans="no">
             <context-group name="_ski_410811" crc="NMTOKEN" purpose="location">
                <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -679,13 +679,13 @@
                <prop prop-type="String" xml:lang="en-us">String</prop>
                <prop prop-type="String" xml:lang="en-us">String</prop>
             </prop-group>
-            <note xml:lang="en-us" priority="1" from="String">String</note>
-            <note xml:lang="en-us" priority="1" from="String">String</note>
-            <trans-unit id="_1_ski_337">
+            <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+            <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+            <trans-unit id="_1_ski_337" translate="yes" reformat="yes" xml:space="preserve" size-unit="pixel" merged-trans="yes">
                <source xml:lang="en">Text</source>
             </trans-unit>
          </group>
-         <group id="_1_ski_356" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" translate="yes" reformat="yes" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String">
+         <group id="_1_ski_356" datatype="plaintext" xml:space="default" ts="String" restype="button" resname="String" extradata="String" help-id="NMTOKEN" menu="String" menu-option="String" menu-name="String" coord="-0;-0;-0;-0" font="String" css-style="String" style="NMTOKEN" exstyle="NMTOKEN" translate="yes" reformat="yes" size-unit="pixel" maxwidth="NMTOKEN" minwidth="NMTOKEN" maxheight="NMTOKEN" minheight="NMTOKEN" maxbytes="NMTOKEN" minbytes="NMTOKEN" charclass="String" merged-trans="no">
             <context-group name="_ski_41145" crc="NMTOKEN" purpose="location">
                <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
                <context context-type="database" match-mandatory="no" crc="NMTOKEN">String</context>
@@ -710,63 +710,63 @@
                <prop prop-type="String" xml:lang="en-us">String</prop>
                <prop prop-type="String" xml:lang="en-us">String</prop>
             </prop-group>
-            <note xml:lang="en-us" priority="1" from="String">String</note>
-            <note xml:lang="en-us" priority="1" from="String">String</note>
-            <trans-unit id="_1_ski_355">
+            <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+            <note xml:lang="en-us" priority="1" from="String" annotates="general">String</note>
+            <trans-unit id="_1_ski_355" translate="yes" reformat="yes" xml:space="preserve" size-unit="pixel" merged-trans="yes">
                <source xml:lang="en">First  sentence.Second sentence.</source>
                <seg-source>
                   <mrk mtype="seg" mid="1">First sentence.</mrk>
                   <mrk mtype="seg" mid="2">Second  sentence.</mrk>
                </seg-source>
-               <alt-trans mid="2" match-quality="75%">
+               <alt-trans mid="2" match-quality="75%" xml:space="preserve" alttranstype="proposal">
                   <source>The second  sentence.</source>
-                  <target>The translated second  sentence.</target>
+                  <target equiv-trans="yes">The translated second  sentence.</target>
                </alt-trans>
             </trans-unit>
          </group>
-         <group merged-trans="yes">
-            <trans-unit id="_1_ski_374">
+         <group merged-trans="yes" xml:space="preserve" translate="yes" reformat="yes" size-unit="pixel">
+            <trans-unit id="_1_ski_374" translate="yes" reformat="yes" xml:space="preserve" size-unit="pixel" merged-trans="yes">
                <source>The German acronym v.</source>
                <target equiv-trans="no">Niemiecki skrót v. OT oznacza górną pozycję silnika.</target>
             </trans-unit>
-            <trans-unit id="_1_ski_383">
+            <trans-unit id="_1_ski_383" translate="yes" reformat="yes" xml:space="preserve" size-unit="pixel" merged-trans="yes">
                <source>OT signifies the top dead center position for an engine.</source>
                <target equiv-trans="no" />
             </trans-unit>
          </group>
-         <group>
-            <trans-unit id="_1_ski_392">
+         <group xml:space="preserve" translate="yes" reformat="yes" size-unit="pixel" merged-trans="no">
+            <trans-unit id="_1_ski_392" translate="yes" reformat="yes" xml:space="preserve" size-unit="pixel" merged-trans="yes">
                <source>First sentence.  Second sentence.</source>
-               <alt-trans match-quality="100%">
+               <alt-trans match-quality="100%" xml:space="preserve" alttranstype="proposal">
                   <source>The second  sentence.</source>
                   <seg-source>
                      <mrk mtype="seg" mid="1">First sentence.</mrk>
                      <mrk mtype="seg" mid="2">Second  sentence.</mrk>
                   </seg-source>
-                  <target>
+                  <target equiv-trans="yes">
                      <mrk mtype="seg" mid="1">Translated first sentence.</mrk>
                      <mrk mtype="seg" mid="2">Translated second  sentence.</mrk>
                   </target>
                </alt-trans>
             </trans-unit>
-            <trans-unit id="_1_ski_401">
+            <trans-unit id="_1_ski_401" translate="yes" reformat="yes" xml:space="preserve" size-unit="pixel" merged-trans="yes">
                <source>First  sentence.Second sentence.</source>
                <seg-source>
                   <mrk mtype="seg" mid="1">First sentence.</mrk>
                   <mrk mtype="seg" mid="2">Second  sentence.</mrk>
                </seg-source>
-               <alt-trans mid="2" match-quality="75%">
+               <alt-trans mid="2" match-quality="75%" xml:space="preserve" alttranstype="proposal">
                   <source>The second  sentence.</source>
-                  <target>The translated second  sentence.</target>
+                  <target equiv-trans="yes">The translated second  sentence.</target>
                </alt-trans>
             </trans-unit>
-            <trans-unit id="_1_ski_410">
+            <trans-unit id="_1_ski_410" translate="yes" reformat="yes" xml:space="preserve" size-unit="pixel" merged-trans="yes">
                <source>First  sentence.Second sentence.</source>
                <seg-source>
                   <mrk mtype="seg" mid="1">First sentence.</mrk>
                   <mrk mtype="seg" mid="2">Second  sentence.</mrk>
                </seg-source>
-               <target>
+               <target equiv-trans="yes">
                   <mrk mtype="seg" mid="1">Translated first sentence.</mrk>
                   <mrk mtype="seg" mid="2">Translated second  sentence.</mrk>
                </target>
