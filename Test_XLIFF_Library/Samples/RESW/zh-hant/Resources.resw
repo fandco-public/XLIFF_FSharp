@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAboutProduct.Label" xml:space="preserve">
+    <value>關於產品</value>
+  </data>
+  <data name="btnBuyRenewSubscription.Content" xml:space="preserve">
+    <value>啟用生成CSV功能..</value>
+  </data>
+  <data name="btnChangeLanguage.Text" xml:space="preserve">
+    <value>更改語言</value>
+  </data>
+  <data name="btnCloseApplication.Label" xml:space="preserve">
+    <value>退出應用程式</value>
+  </data>
+  <data name="btnHowtoUseApp.Label" xml:space="preserve">
+    <value>如何使用App？</value>
+  </data>
+  <data name="btnRateUsOnStore.Label" xml:space="preserve">
+    <value>在商店給我們評分</value>
+  </data>
+  <data name="btnUserSuggestion.Label" xml:space="preserve">
+    <value>需要説明？聯繫我們。</value>
+  </data>
+  <data name="btnBrowseICSFile.Text" xml:space="preserve">
+    <value>選擇包含 .resx 檔案的資料夾...</value>
+  </data>
+  <data name="btnGenerate.Content" xml:space="preserve">
+    <value>驗證並產生 CSV 檔案...</value>
+  </data>
+  <data name="btnNextOnRegisterScreen1.Content" xml:space="preserve">
+    <value>下一個</value>
+  </data>
+  <data name="btnPreviousOnRegisterScreen2.Content" xml:space="preserve">
+    <value>以前</value>
+  </data>
+  <data name="btnResxFieldListFilter.Content" xml:space="preserve">
+    <value>刷新螢幕</value>
+  </data>
+  <data name="btnVerifyOnRegisterScreen2.Content" xml:space="preserve">
+    <value>驗證</value>
+  </data>
+  <data name="btnZipFolderBrowse.Content" xml:space="preserve">
+    <value>流覽。。。</value>
+  </data>
+  <data name="NewUsersHeaderText.Text" xml:space="preserve">
+    <value>新使用者，請註冊您的應用</value>
+  </data>
+  <data name="Tab1.Header" xml:space="preserve">
+    <value>將 resx 欄位與 store 的語言欄位映射</value>
+  </data>
+  <data name="Tab1TextBlock.Text" xml:space="preserve">
+    <value>將 resx 欄位與 store 的語言欄位映射</value>
+  </data>
+  <data name="Tab2.Header" xml:space="preserve">
+    <value>選擇包含 Applicaton Images 的資料夾</value>
+  </data>
+  <data name="Tab2TextBlock.Text" xml:space="preserve">
+    <value>選擇包含 Applicaton Images 的資料夾</value>
+  </data>
+  <data name="Tab3.Header" xml:space="preserve">
+    <value>生成導入清單檔。</value>
+  </data>
+  <data name="tbEmailSentNotice.Text" xml:space="preserve">
+    <value>我們已向您發送帶有驗證碼的電子郵件</value>
+  </data>
+  <data name="tbEnterVerificationCode.Text" xml:space="preserve">
+    <value>輸入驗證碼</value>
+  </data>
+  <data name="tbEnterYourEmail.Text" xml:space="preserve">
+    <value>輸入您的電子郵件位址</value>
+  </data>
+  <data name="tbEnterYourName.Text" xml:space="preserve">
+    <value>輸入您的姓名</value>
+  </data>
+  <data name="tbFilterDropdown.Text" xml:space="preserve">
+    <value>過濾器下拉清單以文字開頭 ：</value>
+  </data>
+  <data name="tbSelectDefaultResx.Text" xml:space="preserve">
+    <value>選擇中性語言/預設 resx 檔案 ：</value>
+  </data>
+  <data name="tbTab2Info1.Text" xml:space="preserve">
+    <value>圖像將應用於每種語言。</value>
+  </data>
+  <data name="tbTab2Info2.Text" xml:space="preserve">
+    <value>以下清單顯示在所選取資料夾中找到的檔案。它將選擇具有正確命名約定的檔，其餘檔將被標記為 'ignored'</value>
+  </data>
+  <data name="TotalresxlanguageFound.Text" xml:space="preserve">
+    <value>找到的 resx 語言總數：</value>
+  </data>
+  <data name="Publish_CopyrightTrademarkInformation" xml:space="preserve">
+    <value>版權所有2017，Freytag &amp; Company， LLC，保留所有權利。</value>
+  </data>
+  <data name="Publish_Description" xml:space="preserve">
+    <value>此應用程式可幫助開發人員快速生成「語言導入」.csv檔，以準備上傳到 Microsoft Store。
+
+您知道覆蓋面很重要的專業應用開發者，因此您需要翻譯您的應用。但現在，您可以通過 100 多次點擊和剪切和粘貼操作將每種語言上傳到商店。當然，一個錯誤，你必須重新開始 - 你浪費了所有的時間。“Import Listing File Generator for Microsoft Store” 使您的多語言上傳每次都能 100% 正確。
+
+我們的「Microsoft Store 導入清單檔產生器」為經驗豐富的專業人士和新手節省了時間並浪費了數百美元。您的首次付費應用上傳將超過您的投資。
+
+我們的工具只需要欄位映射資訊，它將從所有語言 resx 檔中收集資料並設置其格式</value>
+  </data>
+  <data name="Publish_DevStudio" xml:space="preserve">
+    <value>Freytag 團隊</value>
+  </data>
+  <data name="Publish_Feature1" xml:space="preserve">
+    <value>阻止上傳錯誤</value>
+  </data>
+  <data name="Publish_Feature2" xml:space="preserve">
+    <value>跟上 App Store 發佈準則</value>
+  </data>
+  <data name="Publish_Feature3" xml:space="preserve">
+    <value>更新更頻繁、更輕鬆</value>
+  </data>
+  <data name="Publish_ReleaseNotes" xml:space="preserve">
+    <value>版本 2.1.0.0
+Bug 修復
+支援更多語言。
+免費試用選項。
+
+版本 2.0.6.0
+Bug 修復
+支援更多語言。
+
+版本 2.0.5.0
+- 使用者友好性，主要 UI 更改
+- 欄位的自動映射
+- 影像的自動映射
+- 輕鬆的應用內訂閱
+- 更新了“如何使用應用程式”，提供了更多詳細資訊、步驟和屏幕截圖。
+- Bug 修復
+- 根據商店發佈指南更新了規則驗證。</value>
+  </data>
+  <data name="Publish_SearchTerm1" xml:space="preserve">
+    <value>應用上傳</value>
+  </data>
+  <data name="Publish_SearchTerm2" xml:space="preserve">
+    <value>上傳翻譯</value>
+  </data>
+  <data name="Publish_SearchTerm3" xml:space="preserve">
+    <value>發佈翻譯</value>
+  </data>
+  <data name="Publish_SearchTerm4" xml:space="preserve">
+    <value>翻譯 CSV</value>
+  </data>
+  <data name="Publish_SearchTerm5" xml:space="preserve">
+    <value>RESX/RESW 導入</value>
+  </data>
+  <data name="Publish_SearchTerm6" xml:space="preserve">
+    <value>合作夥伴中心</value>
+  </data>
+  <data name="Publish_ShortDescription" xml:space="preserve">
+    <value>此應用程式可幫助開發人員快速生成「語言導入」.csv檔，以準備上傳到 Microsoft Store。</value>
+  </data>
+  <data name="Publish_ShortTitle" xml:space="preserve">
+    <value>商店導入檔產生器</value>
+  </data>
+  <data name="LicenseFull" xml:space="preserve">
+    <value>許可證：完整功能。</value>
+  </data>
+  <data name="LicenseLimited" xml:space="preserve">
+    <value>許可證：功能受限 - 匯出僅限於有限數量的行。升級以解鎖無限的導出功能。</value>
+  </data>
+  <data name="Publish_AdditionalLicenseTerms" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature10" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature11" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature12" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature13" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature14" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature15" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature16" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature17" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature18" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature19" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature20" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature4" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature5" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature6" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature7" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature8" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature9" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq1" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq10" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq11" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq2" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq3" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq4" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq5" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq6" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq7" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq8" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq9" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_PrivacyPolicyUrl" xml:space="preserve">
+    <value>http://freytag.us/Privacy-And-Security-Policy</value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq1" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq10" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq11" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq2" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq3" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq4" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq5" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq6" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq7" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq8" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq9" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_SearchTerm7" xml:space="preserve">
+    <value>Microsoft Store</value>
+  </data>
+  <data name="Publish_SortTitle" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_SupportContactInfo" xml:space="preserve">
+    <value>team@freytag.us</value>
+  </data>
+  <data name="Publish_Website" xml:space="preserve">
+    <value>https://freytag.us/store-import-listing-file-generator-for-microsoft-store-apps</value>
+  </data>
+</root>

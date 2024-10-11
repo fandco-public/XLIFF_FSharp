@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ApplicationDescription" xml:space="preserve">
+    <value>Konvertálja online Google/Outlook naptáradatait olvasható formátumba
+
+Támogatott formátumok : CSV</value>
+  </data>
+  <data name="btnControl_CSVExport" xml:space="preserve">
+    <value>Kivitel...</value>
+  </data>
+  <data name="btnControl_Login" xml:space="preserve">
+    <value>Bejelentkezés...</value>
+  </data>
+  <data name="btnControl_Signout" xml:space="preserve">
+    <value>Kijelentkezés</value>
+  </data>
+  <data name="btnControl_Submit" xml:space="preserve">
+    <value>Előterjeszt</value>
+  </data>
+  <data name="cbControl_RecurringCaption" xml:space="preserve">
+    <value>NE bontsa ki az ismétlődő eseményeket</value>
+  </data>
+  <data name="txtControl_DateFrom" xml:space="preserve">
+    <value>Tól:</value>
+  </data>
+  <data name="txtControl_DateRangeCaption" xml:space="preserve">
+    <value>A kiválasztott naptárból kapjon bejegyzéseket az időszakról ...</value>
+  </data>
+  <data name="txtControl_DateTo" xml:space="preserve">
+    <value>Hoz:</value>
+  </data>
+  <data name="txtControl_MyCalendarsCaption" xml:space="preserve">
+    <value>Saját naptárak</value>
+  </data>
+  <data name="btnControl_AboutProduct" xml:space="preserve">
+    <value>A termékről</value>
+  </data>
+  <data name="btnLicenseContent" xml:space="preserve">
+    <value>Licenc</value>
+  </data>
+  <data name="btnPrivacyAndSecurityContent" xml:space="preserve">
+    <value>Adatvédelmi és biztonsági irányelvek</value>
+  </data>
+  <data name="lblDateFormatContent" xml:space="preserve">
+    <value>Dátumformátum beállításai</value>
+  </data>
+  <data name="mboxDateSelectionBody" xml:space="preserve">
+    <value>Kérjük, válassza ki a megfelelő kezdési és befejezési dátumot. Válasszon a kezdő dátumnál hosszabb befejezési dátumot is.</value>
+  </data>
+  <data name="mboxDateSelectionError" xml:space="preserve">
+    <value>Bevitel szükséges</value>
+  </data>
+  <data name="mboxErrorTitle" xml:space="preserve">
+    <value>Hiba</value>
+  </data>
+  <data name="mboxNoRowsToExport" xml:space="preserve">
+    <value>Nincs exportálandó sor</value>
+  </data>
+  <data name="mboxReallyExitBody" xml:space="preserve">
+    <value>Tényleg ki akar lépni az alkalmazásból?</value>
+  </data>
+  <data name="mboxReallyExitWarning" xml:space="preserve">
+    <value>Figyelmeztetés</value>
+  </data>
+  <data name="mboxUnknownError" xml:space="preserve">
+    <value>Ismeretlen hiba</value>
+  </data>
+  <data name="msgRetrievedText" xml:space="preserve">
+    <value>Lekért</value>
+  </data>
+  <data name="msgRetrievingRecords" xml:space="preserve">
+    <value>Rekordok lekérése...</value>
+  </data>
+  <data name="txtAboutProductTitle" xml:space="preserve">
+    <value>A termékről</value>
+  </data>
+  <data name="txtLoginErrorText" xml:space="preserve">
+    <value>Bejelentkezési hiba!  Kérjük, próbálja újra.</value>
+  </data>
+  <data name="txtNoRecordsText" xml:space="preserve">
+    <value>Nincs rekord</value>
+  </data>
+  <data name="txtPleaseWaitText" xml:space="preserve">
+    <value>Várj, kérlek...</value>
+  </data>
+  <data name="txtUse24HourTimeContent" xml:space="preserve">
+    <value>Használja a 24 órás időt</value>
+  </data>
+  <data name="msgExitApplication" xml:space="preserve">
+    <value>Tényleg ki akarsz lépni?</value>
+  </data>
+  <data name="msgExitApplicationHeader" xml:space="preserve">
+    <value>Figyelmeztetés</value>
+  </data>
+  <data name="mitemChangeLanguageHeader" xml:space="preserve">
+    <value>Nyelv módosítása</value>
+  </data>
+  <data name="Publish_Feature1" xml:space="preserve">
+    <value>- Adatok letöltése, munkaidő nyomon követése.</value>
+  </data>
+  <data name="Publish_CopyrightTrademarkInformation" xml:space="preserve">
+    <value>Szerzői jog Freytag &amp; Company, LLC, 2016-2024</value>
+  </data>
+  <data name="XPublish_MinimumHardwareReq1" xml:space="preserve">
+    <value>Nincs szükség külső hardverre.</value>
+  </data>
+  <data name="Publish_SearchTerm1" xml:space="preserve">
+    <value>Naptár</value>
+  </data>
+  <data name="Publish_SearchTerm2" xml:space="preserve">
+    <value>Biztonsági mentés</value>
+  </data>
+  <data name="Publish_SearchTerm3" xml:space="preserve">
+    <value>Archívum</value>
+  </data>
+  <data name="Publish_SearchTerm6" xml:space="preserve">
+    <value>Munkaidő-nyilvántartás</value>
+  </data>
+  <data name="Publish_SearchTerm7" xml:space="preserve">
+    <value>Teljes idő elszámolása</value>
+  </data>
+  <data name="Publish_ReleaseNotes" xml:space="preserve">
+    <value>5.2.0.0 (2024. júl. 12.)
+Nem csak .csv, most már exportálhatja adatait .json, .xml és .ics formátumba is.
+Hibajavítások.
+
+5.1.19.1 (2024. ápr. 05.)
+Gyorsítsa fel a letöltéseket szálkezeléssel, hibajavításokkal, továbbfejlesztett fordításokkal.
+
+5.0.15.0 (2023. december 19.)
+A Microsoft/Outlook naptár támogatása, hibajavítások, továbbfejlesztett felhasználói élmény
+
+5.0.10.0 (2023. szept. 26.)
+Hibajavítások, továbbfejlesztett felhasználói élmény, saját dátumformátum meghatározása (egyéni) 
+
+4.0.0.0 (2023. január 6.)
+Hibajavítások, jobb felhasználói élmény.
+
+3.0.17.0 (2022. szeptember 14.)
+Új oszlopok Duration, TotalHours és TotalMinutes az exportálás utáni további számításokhoz.
+Hibajavítások
+
+3.0.11.0 (2022. márc. 9.)
+- Hibajavítások.
+
+3.0.10.0
+- Hibajavítások.
+
+3.0.8.0
+- A felhasználók most már megadhatják javaslataikat
+- Hibajavítások.
+
+3.0.7.0
+- Az alkalmazás 30+ nyelven érhető el.
+- Kisebb hibajavítások.</value>
+  </data>
+  <data name="Publish_Description" xml:space="preserve">
+    <value>Bemutatjuk továbbfejlesztett "Naptár exportálása" funkciónkat! Most, a felhasználói visszajelzések alapján, kibővítettük az exportálási képességeket .csv fájlokon túl. A .csv mellett a felhasználók zökkenőmentesen exportálhatják adataikat .json, .xml és .ics formátumokba. 
+
+De ez még nem minden – integráltuk a Google és a Microsoft online naptárainak támogatását is. Mondjon búcsút a platform korlátainak! Akár a Google Naptár rajongója, akár megrögzött Microsoft Outlook-felhasználó, mostantól néhány kattintással könnyedén exportálhatja teljes ütemtervét.
+
+Lehet, hogy jogi titoktartási és nyilvántartási követelményei vannak, vagy talán egységes felületet szeretne a naptárak között.  Exportálja naptárát az adatvédelem vagy a biztonság veszélyeztetése nélkül.   A teljes naptárarchívum elengedhetetlen - nincsenek hiányos rekordok!
+
+Bár a naptár exportálása ingyenesen letölthető, próbaidőszakot kínálunk korlátozott eseményexportálással. Névleges díj ellenében korlátlan exportot oldhat fel, és hozzáférhet az összes funkcióhoz. Felhívjuk figyelmét, hogy ez nem ingyenes szoftver, és vásárlás nélkül a letöltések 10 sorra korlátozódnak.
+
+Töltse le most a "Naptárak exportálása" lehetőséget, és tapasztalja meg a zökkenőmentes adatkezelés kényelmét!
+
+"Megértjük a felhasználói visszajelzések fontosságát. Ha új exportálási formátumokra vagy funkciókra vonatkozó javaslata van, kérjük, ne habozzon kapcsolatba lépni velünk e-mailben (team@freytag.us). Az Ön hozzájárulása segít nekünk abban, hogy folyamatosan fejlesszük termékünket, hogy jobban megfeleljünk az Ön igényeinek."</value>
+  </data>
+  <data name="Grid_Attendees" xml:space="preserve">
+    <value>Résztvevők</value>
+  </data>
+  <data name="Grid_Description" xml:space="preserve">
+    <value>Leírás</value>
+  </data>
+  <data name="Grid_EndDate" xml:space="preserve">
+    <value>Befejezés dátuma</value>
+  </data>
+  <data name="Grid_Location" xml:space="preserve">
+    <value>Hely</value>
+  </data>
+  <data name="Grid_Recurrence" xml:space="preserve">
+    <value>Ismétlődés</value>
+  </data>
+  <data name="Grid_StartDate" xml:space="preserve">
+    <value>Kezdés dátuma</value>
+  </data>
+  <data name="Grid_Summary" xml:space="preserve">
+    <value>Összefoglalás</value>
+  </data>
+  <data name="rbLanguageDates" xml:space="preserve">
+    <value>Dátumok a kiválasztott nyelv alapján</value>
+  </data>
+  <data name="rbRawDates" xml:space="preserve">
+    <value>ISO 8601 formátum</value>
+  </data>
+  <data name="rbUseEnglishDates" xml:space="preserve">
+    <value>En-US formátum használata</value>
+  </data>
+  <data name="txtHowToUseHelp" xml:space="preserve">
+    <value>Hogyan kell használni az alkalmazást?</value>
+  </data>
+  <data name="txtRateUsOnStore" xml:space="preserve">
+    <value>Értékeljen minket az üzletben</value>
+  </data>
+  <data name="Publish_Feature2" xml:space="preserve">
+    <value>- Csökkentse megfelelési terheit.</value>
+  </data>
+  <data name="Publish_Feature3" xml:space="preserve">
+    <value>- Testreszabható dátumformázási lehetőségek</value>
+  </data>
+  <data name="Publish_Feature4" xml:space="preserve">
+    <value>- Az alkalmazás helyben fut, biztosítja az adatvédelmet.</value>
+  </data>
+  <data name="Publish_Feature5" xml:space="preserve">
+    <value>- Visszajelzés és gyors terméktámogatás</value>
+  </data>
+  <data name="Publish_Feature6" xml:space="preserve">
+    <value>- 70+ nyelv támogatása.</value>
+  </data>
+  <data name="btnSuggestions" xml:space="preserve">
+    <value>Támogatás és visszajelzés</value>
+  </data>
+  <data name="btnClose" xml:space="preserve">
+    <value>Bezár</value>
+  </data>
+  <data name="btnSubmitSuggestion" xml:space="preserve">
+    <value>Előterjeszt</value>
+  </data>
+  <data name="tbEnterEmail" xml:space="preserve">
+    <value>Adja meg az e-mail címet</value>
+  </data>
+  <data name="tbLine1" xml:space="preserve">
+    <value>Segítségre van szüksége, vagy funkciókérése van, kérjük, mondja el nekünk!</value>
+  </data>
+  <data name="tbLine2" xml:space="preserve">
+    <value>-- Ha segítségre van szüksége, küldjön támogatási kérést. Vagy örömmel halljuk, ha visszajelzést, javaslatokat szeretne adni, funkciókérést kérne, vagy akár testre kell szabnia az alkalmazást az Ön igényeinek megfelelően.</value>
+  </data>
+  <data name="tbLine3" xml:space="preserve">
+    <value>-- Hibát észlel? Tudassa velünk, kijavítjuk, és lehet, hogy adunk Önnek egy ingyenes* példányt.</value>
+  </data>
+  <data name="tbReEnterEmail" xml:space="preserve">
+    <value>E-mail cím újbóli megadása</value>
+  </data>
+  <data name="tbSuggestions" xml:space="preserve">
+    <value>Az Ön üzenete</value>
+  </data>
+  <data name="tbCustomNoticeMessage" xml:space="preserve">
+    <value>"Tisztelt Felhasználó!
+
+Ez az alkalmazás speciális engedélyeket igényel Öntől a hatékony működéshez. A következő képernyőn olyan lehetőségek jelennek meg, amelyekkel alapvető olvasási engedélyeket adhat ennek az alkalmazásnak a naptáradatok eléréséhez (ahogy az ezen a képen látható).
+
+Kérjük, feltétlenül jelölje be az összes megadott jelölőnégyzetet (ha vannak), majd kattintson a "Folytatás" vagy az "Elfogadás" gombra."
+
+Ha bármilyen aggálya van, kérjük, készítsen képernyőképet, és küldjön nekünk e-mailt a support@freytag.us</value>
+  </data>
+  <data name="tbCustomErrorMessage" xml:space="preserve">
+    <value>Nem adta meg az alkalmazásnak a szükséges engedélyt a Google vagy a Microsoft bejelentkezési hozzájárulási képernyőjén. 
+
+Kérjük, adja meg a szükséges engedélyt a képernyőn megjelenő összes jelölőnégyzet bejelölésével (ahol alkalmazható), mondván: "A FandCO Export Your Calendar hozzáférést kér Google- vagy Microsoft-fiókjához", ahogy az a képernyőképen látható 
+
+Ha továbbra is olyan hibaüzeneteket kap, mint "A kérelem nem rendelkezett elegendő hitelesítési hatókörrel" vagy "A hívónak nincs engedélye a kérésre", akkor készítsen képernyőképet, és küldjön e-mailt a support@freytag.us címre</value>
+  </data>
+  <data name="Grid_Duration" xml:space="preserve">
+    <value>Időtartam</value>
+  </data>
+  <data name="Grid_TotalHours" xml:space="preserve">
+    <value>Összes óra</value>
+  </data>
+  <data name="Grid_TotalMinutes" xml:space="preserve">
+    <value>Összes perc</value>
+  </data>
+  <data name="lblChooseCategory" xml:space="preserve">
+    <value>Válasszon kategóriát</value>
+  </data>
+  <data name="txtErrorMessageTitle" xml:space="preserve">
+    <value>Hiba: Készítsen képernyőképet és e-mailt support@freytag.us</value>
+  </data>
+  <data name="txtInternetNotAvailableError" xml:space="preserve">
+    <value>Kérjük, ellenőrizze, hogy számítógépe csatlakozik-e az internethez. A regisztrációhoz internetkapcsolat szükséges</value>
+  </data>
+  <data name="btnBuyRenewSubscription" xml:space="preserve">
+    <value>Engedélyezze az összes funkciót...</value>
+  </data>
+  <data name="tbBuyPurchase" xml:space="preserve">
+    <value>Vásárlás / Vásárlás</value>
+  </data>
+  <data name="tbCustomDateFormat" xml:space="preserve">
+    <value>Egyéni datetime formátum.</value>
+  </data>
+  <data name="LanguageChangeWarningText" xml:space="preserve">
+    <value>Ez a művelet újraindítja az alkalmazást, biztos benne?</value>
+  </data>
+  <data name="LanguageChangeWarningTextTitle" xml:space="preserve">
+    <value>Figyelmeztetés...</value>
+  </data>
+  <data name="RecurringEventOccuredMessage" xml:space="preserve">
+    <value>Az adatok ismétlődő eseményekkel rendelkeznek.  A jelölőnégyzet használatával NE bontsa ki ezeket az eseményeket.</value>
+  </data>
+  <data name="CustomDateFormatExampleOuputLabel" xml:space="preserve">
+    <value>Példa output:</value>
+  </data>
+  <data name="codeLanguages_IsAvailable" xml:space="preserve">
+    <value>elérhető</value>
+  </data>
+  <data name="codeLanguages_IsNotAvailable" xml:space="preserve">
+    <value>nem érhető el.</value>
+  </data>
+  <data name="codeLanuage_Exception" xml:space="preserve">
+    <value>nem érhető el a készüléken, vagy érvénytelen kulturális azonosító.</value>
+  </data>
+  <data name="codeLicense_Addon" xml:space="preserve">
+    <value>Kattintson ide a licencadatok megtekintéséhez.</value>
+  </data>
+  <data name="codeLicense_Full" xml:space="preserve">
+    <value>Kattintson ide a licencadatok megtekintéséhez.</value>
+  </data>
+  <data name="codeLicense_Limited" xml:space="preserve">
+    <value>Licenc: Korlátozott funkciók, Csak korlátozott sorok exportálása, Vásárlás a korlátlan exportálási funkció aktiválásához.</value>
+  </data>
+  <data name="codeProgressTaskRetrieved" xml:space="preserve">
+    <value>Tevékenység {0}, lekért {1}%</value>
+  </data>
+  <data name="codeStorePurchaseStatus_AlreadyPurchased" xml:space="preserve">
+    <value>Már megvásárolta ezt a terméket.</value>
+  </data>
+  <data name="codeStorePurchaseStatus_Default" xml:space="preserve">
+    <value>A terméket ismeretlen hiba miatt nem vásárolták meg.</value>
+  </data>
+  <data name="codeStorePurchaseStatus_NetworkError" xml:space="preserve">
+    <value>A terméket hálózati hiba miatt nem vásárolták meg.</value>
+  </data>
+  <data name="codeStorePurchaseStatus_NotFound" xml:space="preserve">
+    <value>Ismeretlen hiba: Az előfizetés típusa nem található.</value>
+  </data>
+  <data name="codeStorePurchaseStatus_NotPurchased" xml:space="preserve">
+    <value>A terméket nem vásárolták meg, lehet, hogy törölték.</value>
+  </data>
+  <data name="codeStorePurchaseStatus_ServerError" xml:space="preserve">
+    <value>A terméket szerverhiba miatt nem vásárolták meg.</value>
+  </data>
+  <data name="codeStorePurchaseStatus_Succeeded" xml:space="preserve">
+    <value>A termék sikeresen megvásárolható.</value>
+  </data>
+  <data name="codeStorePurchaseUpdateAppSettings_Exception" xml:space="preserve">
+    <value>A vásárlás hibát észlelt.\n\nA probléma megoldásához team@freytag.us kapcsolatba kell lépnie az ügyfélszolgálattal.\n\nHibaüzenet:</value>
+  </data>
+  <data name="txtEnterDateFormat" xml:space="preserve">
+    <value>Kattintson ide a dátumformátum kiválasztásához vagy megadásához...</value>
+  </data>
+  <data name="txtRegisteredBy" xml:space="preserve">
+    <value>Regisztrálta:</value>
+  </data>
+  <data name="Publish_Feature8" xml:space="preserve">
+    <value>- Nincs rosszindulatú program vagy hirdetés</value>
+  </data>
+  <data name="InsufficientAuthenticationScopesError" xml:space="preserve">
+    <value>Próbálja újra: Sajnáljuk, hogy azt kell mondanom, hogy a bejelentkezés sikeres volt, AZONBAN nem adta meg az alkalmazásnak a szükséges engedélyeket a Google bejelentkezési hozzájárulás képernyőn. Kérjük, adja meg a szükséges engedélyeket a képernyőn megjelenő összes jelölőnégyzet bejelölésével: "Az F&amp;CO Export Google Naptár hozzáférést kér Google Fiókjához". Az alkalmazás nem haladhat tovább a szükséges engedélyek megadása nélkül.</value>
+  </data>
+  <data name="mboxNoExportFormat" xml:space="preserve">
+    <value>Válasszon ki egy exportálási formátumot.</value>
+  </data>
+  <data name="Publish_Feature7" xml:space="preserve">
+    <value>- Támogatott exportálási formátum ( .csv, .xml, .json, .ics )</value>
+  </data>
+  <data name="Publish_AdditionalLicenseTerms" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="Publish_SearchTerm4" xml:space="preserve">
+    <value>Google, Microsoft</value>
+  </data>
+  <data name="Publish_SearchTerm5" xml:space="preserve">
+    <value>CSV</value>
+  </data>
+  <data name="Publish_PrivacyPolicyUrl" xml:space="preserve">
+    <value>https://freytag.us/Privacy-And-Security-Policy</value>
+  </data>
+  <data name="Publish_SupportContactInfo" xml:space="preserve">
+    <value>team@freytag.us</value>
+  </data>
+  <data name="Publish_Website" xml:space="preserve">
+    <value>https://freytag.us/ExportGoogleCalendar</value>
+  </data>
+</root>

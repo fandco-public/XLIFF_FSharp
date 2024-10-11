@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAboutProduct.Label" xml:space="preserve">
+    <value>A termékről</value>
+  </data>
+  <data name="btnBuyRenewSubscription.Content" xml:space="preserve">
+    <value>Engedélyezze a CSV létrehozása funkciót..</value>
+  </data>
+  <data name="btnChangeLanguage.Text" xml:space="preserve">
+    <value>Nyelv módosítása</value>
+  </data>
+  <data name="btnCloseApplication.Label" xml:space="preserve">
+    <value>Kilépés az alkalmazásból</value>
+  </data>
+  <data name="btnHowtoUseApp.Label" xml:space="preserve">
+    <value>Hogyan kell használni az alkalmazást?</value>
+  </data>
+  <data name="btnRateUsOnStore.Label" xml:space="preserve">
+    <value>Értékeljen minket az üzletben</value>
+  </data>
+  <data name="btnUserSuggestion.Label" xml:space="preserve">
+    <value>Segítségre van szüksége? Kapcsolat.</value>
+  </data>
+  <data name="btnBrowseICSFile.Text" xml:space="preserve">
+    <value>Válassza ki a .resx fájl(oka)t tartalmazó mappát...</value>
+  </data>
+  <data name="btnGenerate.Content" xml:space="preserve">
+    <value>CSV fájl érvényesítése és létrehozása...</value>
+  </data>
+  <data name="btnNextOnRegisterScreen1.Content" xml:space="preserve">
+    <value>Következő</value>
+  </data>
+  <data name="btnPreviousOnRegisterScreen2.Content" xml:space="preserve">
+    <value>Előző</value>
+  </data>
+  <data name="btnResxFieldListFilter.Content" xml:space="preserve">
+    <value>Képernyő frissítése</value>
+  </data>
+  <data name="btnVerifyOnRegisterScreen2.Content" xml:space="preserve">
+    <value>Igazol</value>
+  </data>
+  <data name="btnZipFolderBrowse.Content" xml:space="preserve">
+    <value>Böngészik...</value>
+  </data>
+  <data name="NewUsersHeaderText.Text" xml:space="preserve">
+    <value>Új felhasználók, kérjük, regisztrálja alkalmazását</value>
+  </data>
+  <data name="Tab1.Header" xml:space="preserve">
+    <value>Resx mezők leképezése az áruház nyelvi mezőivel</value>
+  </data>
+  <data name="Tab1TextBlock.Text" xml:space="preserve">
+    <value>Resx mezők leképezése az áruház nyelvi mezőivel</value>
+  </data>
+  <data name="Tab2.Header" xml:space="preserve">
+    <value>Válassza ki az Applicaton képeket tartalmazó mappát</value>
+  </data>
+  <data name="Tab2TextBlock.Text" xml:space="preserve">
+    <value>Válassza ki az Applicaton képeket tartalmazó mappát</value>
+  </data>
+  <data name="Tab3.Header" xml:space="preserve">
+    <value>Importálási listafájl létrehozása.</value>
+  </data>
+  <data name="tbEmailSentNotice.Text" xml:space="preserve">
+    <value>Elküldtük e-mailjét ellenőrző kóddal</value>
+  </data>
+  <data name="tbEnterVerificationCode.Text" xml:space="preserve">
+    <value>Adja meg az ellenőrző kódot</value>
+  </data>
+  <data name="tbEnterYourEmail.Text" xml:space="preserve">
+    <value>Adja meg e-mail címét</value>
+  </data>
+  <data name="tbEnterYourName.Text" xml:space="preserve">
+    <value>Írja be a nevét</value>
+  </data>
+  <data name="tbFilterDropdown.Text" xml:space="preserve">
+    <value>Szöveggel kezdődő legördülő lista :</value>
+  </data>
+  <data name="tbSelectDefaultResx.Text" xml:space="preserve">
+    <value>Válassza a Semleges nyelv / Alapértelmezett Resx fájl lehetőséget:</value>
+  </data>
+  <data name="tbTab2Info1.Text" xml:space="preserve">
+    <value>A képek minden nyelvhez alkalmazásra kerülnek.</value>
+  </data>
+  <data name="tbTab2Info2.Text" xml:space="preserve">
+    <value>Az alábbi lista a kiválasztott mappában található fájlokat mutatja. A megfelelő elnevezési konvenciókkal rendelkező fájlokat választja ki, a többi fájl "figyelmen kívül hagyottként" lesz megjelölve</value>
+  </data>
+  <data name="TotalresxlanguageFound.Text" xml:space="preserve">
+    <value>Teljes talált resx nyelv:</value>
+  </data>
+  <data name="Publish_CopyrightTrademarkInformation" xml:space="preserve">
+    <value>Copyright 2017, Freytag &amp; Company, LLC, minden jog fenntartva.</value>
+  </data>
+  <data name="Publish_Description" xml:space="preserve">
+    <value>Ez az alkalmazás segít a fejlesztőknek gyorsan létrehozni .csv "nyelvi importálási" fájlt, amely készen áll a Microsoft Store-ba való feltöltésre.
+
+Egy profi alkalmazásfejlesztő, akit ismersz, az elérés számít, ezért lefordítottad az alkalmazásodat. De most már több mint száz kattintás és kivágási és beillesztési művelet áll rendelkezésére az egyes nyelvek feltöltéséhez az áruházba. És természetesen egy hiba, és újra kell kezdenie - minden elvesztegetett idejét. Az "Import Listing File Generator for Microsoft Store" (Listafájl-generátor importálása a Microsoft Store-hoz) funkcióval a többnyelvű feltöltések minden alkalommal 100%-ban helyesek.
+
+Az "Import Listing File Generator for Microsoft Store" tapasztalt szakemberek és kezdők számára órákat és több száz elpazarolt dollárt takarít meg. Az első fizetett alkalmazásfeltöltés bőven megtérül a befektetésért.
+
+Eszközünk csak terepleképezési információkat igényel, és összegyűjti és formázza az összes nyelvi resx fájlból származó adatokat</value>
+  </data>
+  <data name="Publish_DevStudio" xml:space="preserve">
+    <value>Freytag csapat</value>
+  </data>
+  <data name="Publish_Feature1" xml:space="preserve">
+    <value>Feltöltési hibák leállítása</value>
+  </data>
+  <data name="Publish_Feature2" xml:space="preserve">
+    <value>Tartson lépést az App Store közzétételi irányelveivel</value>
+  </data>
+  <data name="Publish_Feature3" xml:space="preserve">
+    <value>Frissítés gyakrabban és egyszerűbben</value>
+  </data>
+  <data name="Publish_ReleaseNotes" xml:space="preserve">
+    <value>Verzió: 2.1.0.0
+Hibajavítások
+Több nyelv támogatása.
+Ingyenes próbaverzió.
+
+Verzió: 2.0.6.0
+Hibajavítások
+Több nyelv támogatása.
+
+Verzió: 2.0.5.0
+- Felhasználóbarátság, jelentős felhasználói felületi változások
+- Mezők automatikus leképezése
+- Képek automatikus leképezése 
+- Egyszerű alkalmazáson belüli előfizetés
+- Frissített "Hogyan kell használni az alkalmazást" további részletekkel, lépésekkel és képernyőképekkel.
+- Hibajavítások
+- Frissített szabályérvényesítés az áruházi közzétételi irányelvek szerint.</value>
+  </data>
+  <data name="Publish_SearchTerm1" xml:space="preserve">
+    <value>Alkalmazás feltöltése</value>
+  </data>
+  <data name="Publish_SearchTerm2" xml:space="preserve">
+    <value>Fordítások feltöltése</value>
+  </data>
+  <data name="Publish_SearchTerm3" xml:space="preserve">
+    <value>Fordítások közzététele</value>
+  </data>
+  <data name="Publish_SearchTerm4" xml:space="preserve">
+    <value>Fordítások CSV</value>
+  </data>
+  <data name="Publish_SearchTerm5" xml:space="preserve">
+    <value>RESX/RESW importálás</value>
+  </data>
+  <data name="Publish_SearchTerm6" xml:space="preserve">
+    <value>Partnerközpont</value>
+  </data>
+  <data name="Publish_SearchTerm7" xml:space="preserve">
+    <value>Microsoft Áruház</value>
+  </data>
+  <data name="Publish_ShortDescription" xml:space="preserve">
+    <value>Ez az alkalmazás segít a fejlesztőknek gyorsan létrehozni .csv "nyelvi importálási" fájlt, amely készen áll a Microsoft Store-ba való feltöltésre.</value>
+  </data>
+  <data name="LicenseFull" xml:space="preserve">
+    <value>Licenc: Teljes funkciók.</value>
+  </data>
+  <data name="LicenseLimited" xml:space="preserve">
+    <value>Licenc: Korlátozott funkciók - Az exportálás korlátozott számú sorra korlátozódik. Frissítsen a korlátlan exportálási funkciók feloldásához.</value>
+  </data>
+  <data name="Publish_AdditionalLicenseTerms" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature10" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature11" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature12" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature13" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature14" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature15" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature16" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature17" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature18" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature19" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature20" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature4" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature5" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature6" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature7" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature8" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_Feature9" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq1" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq10" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq11" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq2" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq3" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq4" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq5" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq6" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq7" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq8" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_MinimumHardwareReq9" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_PrivacyPolicyUrl" xml:space="preserve">
+    <value>http://freytag.us/Privacy-And-Security-Policy</value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq1" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq10" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq11" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq2" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq3" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq4" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq5" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq6" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq7" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq8" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_RecommendedHardwareReq9" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_ShortTitle" xml:space="preserve">
+    <value>Store Import File Generator</value>
+  </data>
+  <data name="Publish_SortTitle" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Publish_SupportContactInfo" xml:space="preserve">
+    <value>team@freytag.us</value>
+  </data>
+  <data name="Publish_Website" xml:space="preserve">
+    <value>https://freytag.us/store-import-listing-file-generator-for-microsoft-store-apps</value>
+  </data>
+</root>

@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ApplicationDescription" xml:space="preserve">
+    <value>將您的在線 Google/Outlook 日曆資料轉換為可讀格式
+
+支援的格式 ： CSV</value>
+  </data>
+  <data name="btnControl_CSVExport" xml:space="preserve">
+    <value>出口。。。</value>
+  </data>
+  <data name="btnControl_Login" xml:space="preserve">
+    <value>登錄。。。</value>
+  </data>
+  <data name="btnControl_Signout" xml:space="preserve">
+    <value>登出</value>
+  </data>
+  <data name="btnControl_Submit" xml:space="preserve">
+    <value>提交</value>
+  </data>
+  <data name="cbControl_RecurringCaption" xml:space="preserve">
+    <value>不要展開重複發生的事件</value>
+  </data>
+  <data name="txtControl_DateFrom" xml:space="preserve">
+    <value>從：</value>
+  </data>
+  <data name="txtControl_DateRangeCaption" xml:space="preserve">
+    <value>從選定的行事曆中取得期間的項目...</value>
+  </data>
+  <data name="txtControl_DateTo" xml:space="preserve">
+    <value>自：</value>
+  </data>
+  <data name="txtControl_MyCalendarsCaption" xml:space="preserve">
+    <value>我的日曆</value>
+  </data>
+  <data name="btnControl_AboutProduct" xml:space="preserve">
+    <value>關於產品</value>
+  </data>
+  <data name="btnLicenseContent" xml:space="preserve">
+    <value>許可證</value>
+  </data>
+  <data name="btnPrivacyAndSecurityContent" xml:space="preserve">
+    <value>隱私和安全政策</value>
+  </data>
+  <data name="lblDateFormatContent" xml:space="preserve">
+    <value>日期格式選項</value>
+  </data>
+  <data name="mboxDateSelectionBody" xml:space="preserve">
+    <value>請選擇適當的開始和結束日期。此外，選擇大於開始日期的結束日期。</value>
+  </data>
+  <data name="mboxDateSelectionError" xml:space="preserve">
+    <value>需要輸入</value>
+  </data>
+  <data name="mboxErrorTitle" xml:space="preserve">
+    <value>錯誤</value>
+  </data>
+  <data name="mboxNoRowsToExport" xml:space="preserve">
+    <value>沒有要導出的行</value>
+  </data>
+  <data name="mboxReallyExitBody" xml:space="preserve">
+    <value>您真的要退出應用程式嗎？</value>
+  </data>
+  <data name="mboxReallyExitWarning" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="mboxUnknownError" xml:space="preserve">
+    <value>未知錯誤</value>
+  </data>
+  <data name="msgRetrievedText" xml:space="preserve">
+    <value>檢索</value>
+  </data>
+  <data name="msgRetrievingRecords" xml:space="preserve">
+    <value>正在檢索記錄...</value>
+  </data>
+  <data name="txtAboutProductTitle" xml:space="preserve">
+    <value>關於產品</value>
+  </data>
+  <data name="txtLoginErrorText" xml:space="preserve">
+    <value>登錄錯誤！ 請重試。</value>
+  </data>
+  <data name="txtNoRecordsText" xml:space="preserve">
+    <value>暫無記錄</value>
+  </data>
+  <data name="txtPleaseWaitText" xml:space="preserve">
+    <value>請稍候。。。</value>
+  </data>
+  <data name="txtUse24HourTimeContent" xml:space="preserve">
+    <value>使用24小時時間</value>
+  </data>
+  <data name="msgExitApplication" xml:space="preserve">
+    <value>你真的想退出嗎？</value>
+  </data>
+  <data name="msgExitApplicationHeader" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="mitemChangeLanguageHeader" xml:space="preserve">
+    <value>更改語言</value>
+  </data>
+  <data name="Publish_AdditionalLicenseTerms" xml:space="preserve">
+    <value>不適用</value>
+  </data>
+  <data name="Publish_Feature1" xml:space="preserve">
+    <value>- 下載數據，跟蹤工作時間。</value>
+  </data>
+  <data name="Publish_CopyrightTrademarkInformation" xml:space="preserve">
+    <value>版權所有 Freytag &amp; Company， LLC， 2016-2024</value>
+  </data>
+  <data name="XPublish_MinimumHardwareReq1" xml:space="preserve">
+    <value>無需外部硬體。</value>
+  </data>
+  <data name="Publish_SearchTerm1" xml:space="preserve">
+    <value>日曆</value>
+  </data>
+  <data name="Publish_SearchTerm2" xml:space="preserve">
+    <value>備份</value>
+  </data>
+  <data name="Publish_SearchTerm3" xml:space="preserve">
+    <value>檔案</value>
+  </data>
+  <data name="Publish_SearchTerm4" xml:space="preserve">
+    <value>谷歌、Microsoft</value>
+  </data>
+  <data name="Publish_SearchTerm5" xml:space="preserve">
+    <value>CSV格式</value>
+  </data>
+  <data name="Publish_SearchTerm6" xml:space="preserve">
+    <value>時程表</value>
+  </data>
+  <data name="Publish_SearchTerm7" xml:space="preserve">
+    <value>總時間會計</value>
+  </data>
+  <data name="Publish_ReleaseNotes" xml:space="preserve">
+    <value>5.2.0.0（2024 年 7 月 12 日）
+不僅是.csv，現在您還可以將數據匯出為 .json、.xml 和 .ics 格式。
+Bug修復。
+
+5.1.19.1（2024 年 4 月 5 日）
+通過線程加速下載，錯誤修復，改進翻譯。
+
+5.0.15.0（2023 年 12 月 19 日）
+添加對 Microsoft/Outlook 日曆、錯誤修復、改進的用戶體驗的支援
+
+5.0.10.0（2023 年 9 月 26 日）
+Bug修復，改進使用者體驗，定義自己的日期格式（自訂）
+
+4.0.0.0（2023 年 1 月 6 日）
+修復了錯誤，改善了用戶體驗。
+
+3.0.17.0（2022 年 9 月 14 日）
+新列 Duration、TotalHours、TotalMinutes，用於導出後的任何進一步計算。
+Bug 修復
+
+3.0.11.0（2022 年 3 月 9 日）
+- Bug修復。
+
+3.0.10.0
+- Bug修復。
+
+3.0.8.0
+- 用戶現在可以提出他們的建議
+- Bug修復。
+
+3.0.7.0
+- 應用程式提供 30+ 種語言。
+- 小錯誤修復。</value>
+  </data>
+  <data name="Publish_Description" xml:space="preserve">
+    <value>介紹我們增強的「導出日曆」功能！現在，根據用戶反饋，我們已將導出功能擴展到.csv檔之外。除了.csv之外，使用者還可以將其數據無縫導出為.json、.xml和.ics格式。
+
+但這還不是全部 - 我們還集成了對Google和Microsoft在線日曆的支援。告別平臺限制！無論您是Google日曆愛好者還是 Microsoft Outlook 的鐵杆使用者，您現在只需按兩下即可輕鬆匯出整個日程安排。
+
+您可能有法律保密和記錄保存要求，或者您可能希望跨日曆的介面一致。 在不影響數據隱私或安全性的情況下匯出日曆。  完整的日曆存檔是必不可少的 - 沒有不完整的記錄！
+
+雖然「導出日曆」可免費下載，但我們提供試用期，活動導出次數有限。只需象徵性的費用，您就可以解鎖無限制的出口並訪問所有功能。請注意，這不是免費軟體，未經購買，下載限製為10行。
+
+立即下載「導出您的日曆」，體驗無縫數據管理的便利！
+
+“我們瞭解用戶反饋的重要性。如果您對新的導出格式或功能有任何建議，請隨時通過電子郵件 （team@freytag.us） 與我們聯繫。您的意見有助於我們不斷改進我們的產品，以更好地滿足您的需求。</value>
+  </data>
+  <data name="Grid_Attendees" xml:space="preserve">
+    <value>出席者</value>
+  </data>
+  <data name="Grid_Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Grid_EndDate" xml:space="preserve">
+    <value>結束日期</value>
+  </data>
+  <data name="Grid_Location" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="Grid_Recurrence" xml:space="preserve">
+    <value>復發</value>
+  </data>
+  <data name="Grid_StartDate" xml:space="preserve">
+    <value>開始日期</value>
+  </data>
+  <data name="Grid_Summary" xml:space="preserve">
+    <value>總結</value>
+  </data>
+  <data name="rbLanguageDates" xml:space="preserve">
+    <value>基於所選語言的日期</value>
+  </data>
+  <data name="rbRawDates" xml:space="preserve">
+    <value>ISO 8601 格式</value>
+  </data>
+  <data name="rbUseEnglishDates" xml:space="preserve">
+    <value>使用 en-US 格式</value>
+  </data>
+  <data name="txtHowToUseHelp" xml:space="preserve">
+    <value>如何使用應用程式？</value>
+  </data>
+  <data name="txtRateUsOnStore" xml:space="preserve">
+    <value>在商店評價我們</value>
+  </data>
+  <data name="Publish_Feature2" xml:space="preserve">
+    <value>- 減輕合規負擔。</value>
+  </data>
+  <data name="Publish_Feature3" xml:space="preserve">
+    <value>- 可自定義的日期格式選項</value>
+  </data>
+  <data name="Publish_Feature4" xml:space="preserve">
+    <value>- 應用程式在本地運行，確保數據隱私。</value>
+  </data>
+  <data name="Publish_Feature5" xml:space="preserve">
+    <value>- 反饋和及時的產品支援</value>
+  </data>
+  <data name="Publish_Feature6" xml:space="preserve">
+    <value>- 支援70+種語言。</value>
+  </data>
+  <data name="btnSuggestions" xml:space="preserve">
+    <value>支援和反饋</value>
+  </data>
+  <data name="btnClose" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="btnSubmitSuggestion" xml:space="preserve">
+    <value>提交</value>
+  </data>
+  <data name="tbEnterEmail" xml:space="preserve">
+    <value>輸入電子郵件位址</value>
+  </data>
+  <data name="tbLine1" xml:space="preserve">
+    <value>需要説明或有功能請求，請告訴我們！</value>
+  </data>
+  <data name="tbLine2" xml:space="preserve">
+    <value>-- 如果您需要説明，請提出支援請求。或者，如果您希望提供反饋、建議、詢問功能請求，或者即使您需要根據自己的需要自定義應用程式，我們也很樂意聽到。</value>
+  </data>
+  <data name="tbLine3" xml:space="preserve">
+    <value>-- 注意到一個錯誤了嗎？請告訴我們，我們將修復它，我們可能會為您提供免費*副本。</value>
+  </data>
+  <data name="tbReEnterEmail" xml:space="preserve">
+    <value>重新輸入電子郵件位址</value>
+  </data>
+  <data name="tbSuggestions" xml:space="preserve">
+    <value>您的留言</value>
+  </data>
+  <data name="tbCustomNoticeMessage" xml:space="preserve">
+    <value>“尊敬的使用者，
+
+此應用程式需要您的特定許可權才能有效運行。以下螢幕將顯示用於授予此應用訪問日曆數據的基本讀取許可權的選項（如下圖所示）。
+
+請確保選取提供的所有複選框（如果有），然後按下「繼續」或「接受」 按鈕。
+
+如果您有任何疑問，請截取螢幕截圖併發送電子郵件至 support@freytag.us</value>
+  </data>
+  <data name="tbCustomErrorMessage" xml:space="preserve">
+    <value>您未在 Google 或 Microsoft 登錄同意螢幕期間授予此應用所需的許可權。
+
+請通過勾選螢幕上顯示的所有複選框（如適用之）來授予必要的許可權，如螢幕截圖所示，顯示“FandCO 匯出您的日曆希望訪問您的Google或Microsoft帳戶”
+
+如果您仍然收到「請求的身份驗證範圍不足」或「呼叫者無權請求」等錯誤，請截取螢幕截圖併發送電子郵件至 support@freytag.us</value>
+  </data>
+  <data name="Grid_Duration" xml:space="preserve">
+    <value>期間</value>
+  </data>
+  <data name="Grid_TotalHours" xml:space="preserve">
+    <value>總小時數</value>
+  </data>
+  <data name="Grid_TotalMinutes" xml:space="preserve">
+    <value>總分鐘數</value>
+  </data>
+  <data name="lblChooseCategory" xml:space="preserve">
+    <value>選擇類別</value>
+  </data>
+  <data name="txtErrorMessageTitle" xml:space="preserve">
+    <value>錯誤：截取螢幕截圖並通過電子郵件發送給 support@freytag.us</value>
+  </data>
+  <data name="txtInternetNotAvailableError" xml:space="preserve">
+    <value>請確保您的電腦已連接到互聯網。註冊需要互聯網連接</value>
+  </data>
+  <data name="btnBuyRenewSubscription" xml:space="preserve">
+    <value>開啟所有功能...</value>
+  </data>
+  <data name="tbBuyPurchase" xml:space="preserve">
+    <value>購買/購買</value>
+  </data>
+  <data name="tbCustomDateFormat" xml:space="preserve">
+    <value>自訂日期時間格式。</value>
+  </data>
+  <data name="LanguageChangeWarningText" xml:space="preserve">
+    <value>此操作將重新啟動應用程式，您確定嗎？</value>
+  </data>
+  <data name="LanguageChangeWarningTextTitle" xml:space="preserve">
+    <value>警告。。。</value>
+  </data>
+  <data name="RecurringEventOccuredMessage" xml:space="preserve">
+    <value>數據具有重複性事件。 使用複選框不展開這些事件。</value>
+  </data>
+  <data name="CustomDateFormatExampleOuputLabel" xml:space="preserve">
+    <value>輸出範例：</value>
+  </data>
+  <data name="codeLanguages_IsAvailable" xml:space="preserve">
+    <value>可用</value>
+  </data>
+  <data name="codeLanguages_IsNotAvailable" xml:space="preserve">
+    <value>不可用。</value>
+  </data>
+  <data name="codeLanuage_Exception" xml:space="preserve">
+    <value>在計算機上不可用或區域性標識碼無效。</value>
+  </data>
+  <data name="codeLicense_Addon" xml:space="preserve">
+    <value>按兩下以查看您的許可證資訊。</value>
+  </data>
+  <data name="codeLicense_Full" xml:space="preserve">
+    <value>按兩下以查看您的許可證資訊。</value>
+  </data>
+  <data name="codeLicense_Limited" xml:space="preserve">
+    <value>許可證：有限功能，僅導出有限行，購買以激活無限導出功能。</value>
+  </data>
+  <data name="codeProgressTaskRetrieved" xml:space="preserve">
+    <value>工作 {0}， 檢索 {1}%</value>
+  </data>
+  <data name="codeStorePurchaseStatus_AlreadyPurchased" xml:space="preserve">
+    <value>您已經購買了此產品。</value>
+  </data>
+  <data name="codeStorePurchaseStatus_Default" xml:space="preserve">
+    <value>由於未知錯誤，未購買產品。</value>
+  </data>
+  <data name="codeStorePurchaseStatus_NetworkError" xml:space="preserve">
+    <value>由於網路錯誤，未購買產品。</value>
+  </data>
+  <data name="codeStorePurchaseStatus_NotFound" xml:space="preserve">
+    <value>未知錯誤：未找到訂閱類型。</value>
+  </data>
+  <data name="codeStorePurchaseStatus_NotPurchased" xml:space="preserve">
+    <value>產品未購買，可能已取消。</value>
+  </data>
+  <data name="codeStorePurchaseStatus_ServerError" xml:space="preserve">
+    <value>由於伺服器錯誤，未購買產品。</value>
+  </data>
+  <data name="codeStorePurchaseStatus_Succeeded" xml:space="preserve">
+    <value>產品購買成功。</value>
+  </data>
+  <data name="codeStorePurchaseUpdateAppSettings_Exception" xml:space="preserve">
+    <value>您的購買遇到錯誤。\n\n您需要聯繫 team@freytag.us 的支持人員才能解決此問題。\n\n錯誤消息：</value>
+  </data>
+  <data name="txtEnterDateFormat" xml:space="preserve">
+    <value>點選此選項， 或輸入日期格式...</value>
+  </data>
+  <data name="txtRegisteredBy" xml:space="preserve">
+    <value>註冊人</value>
+  </data>
+  <data name="Publish_Feature8" xml:space="preserve">
+    <value>- 沒有惡意軟體或廣告</value>
+  </data>
+  <data name="InsufficientAuthenticationScopesError" xml:space="preserve">
+    <value>再試一次：很抱歉，您的登錄成功，但是，您沒有在Google登錄同意螢幕期間授予此應用程式所需的許可權。請通過選中螢幕上顯示的所有複選框來提供必要的許可權，指出“F&amp;CO Export Google Calendar requests access to your Google Account”。如果沒有您授予必要的許可權，應用程式將無法繼續。</value>
+  </data>
+  <data name="mboxNoExportFormat" xml:space="preserve">
+    <value>請選擇一種匯出格式。</value>
+  </data>
+  <data name="Publish_Feature7" xml:space="preserve">
+    <value>- 支援的匯出格式 （ .csv， .xml， .json， .ics ）</value>
+  </data>
+  <data name="Publish_PrivacyPolicyUrl" xml:space="preserve">
+    <value>https://freytag.us/Privacy-And-Security-Policy</value>
+  </data>
+  <data name="Publish_SupportContactInfo" xml:space="preserve">
+    <value>team@freytag.us</value>
+  </data>
+  <data name="Publish_Website" xml:space="preserve">
+    <value>https://freytag.us/ExportGoogleCalendar</value>
+  </data>
+</root>
