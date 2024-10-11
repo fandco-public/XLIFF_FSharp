@@ -10,31 +10,32 @@ open System.Xml.Schema
 
 module XLIFF_v1_2 =
 
-    type XLIFF_v1_2_Class() =
+
+    type XML_Class( pSchemaPaths: string list) = 
 
 
         // INIT Schema Set
-        let schemaPathsForXLIFFv1_2: string list = [ @"Schemas\v1.2\xliff-core-1.2-transitional.xsd";
-                                                     @"Schemas\v1.2\xml.xsd"
-                                                     ]
-        let schemaSetForXLIFFv1_2 = new System.Xml.Schema.XmlSchemaSet()
-        let assemblyLocation = Assembly.GetExecutingAssembly().Location
-        //let baseDir = AppDomain.CurrentDomain.BaseDirectory
-        let libraryDirectory = System.IO.Path.GetDirectoryName(assemblyLocation)
-        //let libraryDirectory = ""
 
-        do for path in schemaPathsForXLIFFv1_2 do
+        let xmlSchemaFile = "Schemas\XML\xml.xsd"
+        let schemaPaths = xmlSchemaFile :: pSchemaPaths
+
+        let schemaSet = new System.Xml.Schema.XmlSchemaSet()
+        let assemblyLocation = Assembly.GetExecutingAssembly().Location
+        let libraryDirectory = System.IO.Path.GetDirectoryName(assemblyLocation)
+        do for path in schemaPaths do
             let schemaPath = Path.Combine(libraryDirectory, path)
-            schemaSetForXLIFFv1_2.Add(null, schemaPath) |> ignore
+            schemaSet.Add(null, schemaPath) |> ignore
+
 
         // MEMBERS
 
-        member val ready : bool = false
-        member val documentForXLIFFv1_2 : System.Xml.Linq.XDocument = new System.Xml.Linq.XDocument() with get, set
+        member val ready = false
+        member val document : System.Xml.Linq.XDocument = new System.Xml.Linq.XDocument() with get, set
+
 
         // READ
 
-        member this.ReadXliffFile(xmlPath : string) : unit =
+        member this.Read(xmlPath : string) : unit =
             printfn "Reading XLIFF file %s\n\n" xmlPath
 
             // Function to handle validation events
@@ -48,14 +49,38 @@ module XLIFF_v1_2 =
 
             // Create a reader settings object
             let settings = new XmlReaderSettings()
-            settings.Schemas <- schemaSetForXLIFFv1_2
+            settings.Schemas <- schemaSet
             settings.ValidationType <- ValidationType.Schema
 
             // Create an XmlReader object with the settings and validate
             use reader = XmlReader.Create(xmlPath, settings)
-            this.documentForXLIFFv1_2 <- XDocument.Load(reader)
+            this.document <- XDocument.Load(reader)
             reader.Close()
             printfn "XML document is valid."
+
+
+        // WRITE
+
+        member this.Write(file) =
+            if not this.ready then
+                raise (new System.Exception("Not ready!")) |> ignore
+
+            printfn "Writing file %s" file
+            failwith "Not implemented"
+
+
+
+    // XLIFF v1.2
+
+    type XLIFF_v1_2_Class() =
+        inherit XML_Class([ @"Schemas\v1.2\xliff-core-1.2-transitional.xsd";
+                            ])
+
+        // READ
+
+        member this.ReadXliffFile(xmlPath : string) : unit =
+            printfn "Reading XLIFF file %s\n\n" xmlPath
+            this.Read(xmlPath)
 
 
         member this.ReadResxOrReswFile(file) =

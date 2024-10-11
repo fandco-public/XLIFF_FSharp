@@ -57,4 +57,9 @@
     <ProjectReference Include="..\XLIFF_Library\XLIFF_Library.fsproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Samples\RESW\" />
+    <Folder Include="Samples\RESX\" />
+  </ItemGroup>
+
 </Project>
