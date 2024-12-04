@@ -22,7 +22,7 @@ module XLIFF_v1_2 =
         // READ
 
         member this.ReadAndDontValidateXliff(xmlPath : string) : unit =
-            printfn "Reading XLIFF file %s\n\n" xmlPath
+            printfn "Reading but NOT validating XLIFF file %s\n\n" xmlPath
             this.ReadDontValidate(xmlPath)
 
         member this.ReadResxOrResw(file) =
@@ -44,10 +44,12 @@ module XLIFF_v1_2 =
 
         // VALIDATE
 
-        member this.ReadAndValidateXliff(file) =
+        member this.ReadAndValidateXliff(xmlPath) =
+            printfn "Reading & validating XLIFF file %s\n\n" xmlPath
+            this.ReadDontValidate(xmlPath)
             match this.Problems with
             | Some _ -> raise (new System.Exception("Not ready!"))
-            | None -> base.ReadAndValidate(file)
+            | None -> base.ReadAndValidate(xmlPath)
 
         member this.CheckResxOrReswForXliff(file) =
             printfn "Writing file %s" file
