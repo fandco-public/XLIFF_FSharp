@@ -630,7 +630,7 @@ let xmlSettings_DtdProcessing_Parse = { defaultXMLReaderSettings with DtdProcess
 
 #!fsharp
 
-let xmlStringWithInlineSchema = """<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+let xmlStringWithDirectlyInlineSchema = """<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:element name="root">
       <xsd:complexType>
@@ -656,12 +656,6 @@ open System
 open System.Xml
 open System.Xml.Schema
 
-
-// Define the XmlReaderSettings with schema validation
-let xmlSettingsWithInlineSchema = XmlReaderSettings()
-xmlSettingsWithInlineSchema.ValidationType <- ValidationType.Schema
-xmlSettingsWithInlineSchema.XmlResolver <- XmlUrlResolver() // Enable retrieval of external resources
-
 // Define a validation event handler to handle validation errors
 let validationEventHandler = ValidationEventHandler(fun sender args ->
     match args.Severity with
@@ -669,24 +663,22 @@ let validationEventHandler = ValidationEventHandler(fun sender args ->
     | XmlSeverityType.Error -> printfn "Error: %s" args.Message
     | _ -> failwith "Unknown validation error"
 )
-xmlSettingsWithInlineSchema.ValidationEventHandler <- validationEventHandler
 
-// Read and validate the XML
-let stringReader = new System.IO.StringReader(xmlStringWithInlineSchema)
-use reader = XmlReader.Create(stringReader, xmlSettingsWithInlineSchema)
-while reader.Read() do
-    // Process the XML document
-    ()
+// Define the XmlReaderSettings with schema validation
+let XMLSettingsWithDirectlyInlineSchema = 
+    { defaultXMLReaderSettings with ValidationType = ValidationType.Schema; 
+                                    XmlResolver = XmlUrlResolver();
+                                    ValidationEventHandler = validationEventHandler }
 
 // Example usage
-let nodesWithInlineSchema = readXml xmlStringWithInlineSchema xmlSettingsWithInlineSchema
+let nodesWithInlineSchema = readXml xmlStringWithDirectlyInlineSchema XMLSettingsWithDirectlyInlineSchema
 Console.WriteLine("\nNode count: {0}", nodesWithInlineSchema.Length)
 for node in nodesWithInlineSchema do
     Console.WriteLine(node)
 
 #!fsharp
 
-let xmlStringWithInlineSchema = """
+let xmlStringWithLongerInlineSchema = """
 <root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd">
     <element1 attr1="value1" attr2="value2">Text1</element1>
     <element2 attr3="value3">
