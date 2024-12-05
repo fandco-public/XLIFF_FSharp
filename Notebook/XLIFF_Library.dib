@@ -1,0 +1,760 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+The *XLIFF_Library* constructs, validates, extends, writes and reads XLIFF files.
+
+Uses Hindley-Miller type system (polymorphic lambda calculus) and as much as possible pure total functions for a reliable and expressive representation of Xml data structures.
+
+#!markdown
+
+Plan:
+* Define F# types capable of representing XML data structures.
+* Define functions
+    * that can add XML elements and properties to the above types.
+    * that use the above types to build XLIFF v1.2 data structures.
+    * to write any XML data structure to the filesystem.
+    * to read any XML data strcture from the filesystem.
+    * that validate any XML data structure against a schema.
+    * that validate any XML data structure against a DTD.
+
+#!fsharp
+
+open System
+
+// Debugging routines
+type Count() =
+    let mutable count = 0
+    member this.Increment() =
+        count <- count + 1
+        Console.WriteLine(count)
+
+    member this.Increment(message: string) =
+        count <- count + 1
+        Console.WriteLine(sprintf "%s: %d" message count)
+
+#!fsharp
+
+// F# XML types
+
+// This notebook is written in F# and uses the polyglot-notebook language.  
+// Use VS Code with the Ionide plugin to run this notebook.
+
+open System
+open System.Xml
+open System.Xml.Schema
+
+type XMLAttribute = {
+    AttributeNode: XmlAttribute
+    Name: string
+    Value: string
+}
+and XMLComment = {
+    CommentNode: XmlComment
+    Name: string
+    Value: string
+}
+and XMLText = {
+    TextNode: XmlText
+    Name: string
+    Value: string
+}
+and XMLCDataSection = {
+    CDataNode: XmlCDataSection
+    Name: string
+    Value: string
+}
+and XMLEntityReference = {
+    EntityReferenceNode: XmlEntityReference
+    Name: string
+}
+and XMLWhitespace = {
+    WhitespaceNode: XmlWhitespace
+    Name: string
+    Value: string
+}
+and XMLSignificantWhitespace = {
+    SignificantWhitespaceNode: XmlSignificantWhitespace
+    Name: string
+    Value: string
+}
+and XMLProcessingInstruction = {
+    ProcessingInstructionNode: XmlProcessingInstruction
+    Name: string
+    Target: string
+    Data: string
+}
+and XMLDocumentType = {
+    DocumentTypeNode: XmlDocumentType
+    Name: string
+    PublicId: string
+    SystemId: string
+    InternalSubset: string
+}
+and XMLEntity = {
+    EntityNode: XmlEntity
+    Name: string
+    PublicId: string
+    SystemId: string
+    BaseUri: string
+}
+and XMLNotation = {
+    NotationNode: XmlNotation
+    Name: string
+    PublicId: string
+    SystemId: string
+    BaseUri: string
+}
+and XMLDeclaration = {
+    DeclarationNode: XmlDeclaration
+    Name: string
+    Version: string
+    Encoding: string
+    Standalone: string
+}
+and XMLDocument = {
+    DocumentNode: XmlDocument
+    Name: string
+    Root: XMLNode
+}
+and XMLDocumentFragment = {
+    DocumentFragmentNode: XmlDocumentFragment
+    Name: string
+    Children: XMLNode list option
+}
+and XMLElement = {
+    ElementNode: XmlElement
+    Name: string
+    Attributes: XMLAttribute list option
+    Children: XMLNode list option
+    InnerText: string option
+}
+and XMLNode = 
+    | Attribute of XMLAttribute
+    | Element of XMLElement
+    | Text of XMLText
+    | CData of XMLCDataSection
+    | EntityReference of XMLEntityReference
+    | Entity of XMLEntity
+    | ProcessingInstruction of XMLProcessingInstruction
+    | Comment of XMLComment
+    | Document of XMLDocument
+    | DocumentType of XMLDocumentType
+    | DocumentFragment of XMLDocumentFragment
+    | Notation of XMLNotation
+    | Whitespace of XMLWhitespace
+    | SignificantWhitespace of XMLSignificantWhitespace
+    | EndElement of XMLElement
+    | EndEntity of XMLEntity
+    | Declaration of XMLDeclaration
+
+#!fsharp
+
+(*
+To validate an XML document against a schema in F#, you can use the XmlReaderSettings class to specify the validation settings for an XmlReader. 
+The XmlReaderSettings class provides properties that allow you to configure the validation type, schema, and validation flags for an XmlReader instance.
+*)
+type XMLReaderSettings = {
+    (*
+    Get or sets a vlue indicating whether asynchronous XmlReader methods are allowed.
+    The Async property is a boolean value that indicates whether asynchronous XmlReader methods are allowed. 
+    If this property is set to true, the XmlReader will allow asynchronous methods to be called. 
+    If it is set to false, the XmlReader will not allow asynchronous methods to be called.
+    An example of an asynchronous method is XmlReader.ReadAsync, which reads the next node asynchronously from the stream.
+    DEFAULT: false
+    *)
+    Async: bool
+
+    // Gets or sets a value indicating whether to check characters in the content model.  
+    // This property is used to determine whether the XmlReader should check the characters in the content model for validity. If this property is set to true, the XmlReader will check the characters in the content model for validity. If it is set to false, the XmlReader will not check the characters in the content model for validity.
+    // DEFAULT: false
+    CheckCharacters: bool
+
+    // The CloseInput property is a boolean value that typically indicates whether an input stream should be closed after it has been used. 
+    // DEFAULT: false
+    CloseInput: bool
+
+    // The ConformanceLevel property is an enumeration value that specifies the level of conformance that the XmlReader should enforce.
+    // Possible conformance levels are: 
+    //  Auto - The Auto conformance level allows the XmlReader to automatically detect whether the XML content is a document or a fragment.
+    //  Document - The Document conformance level ensures that the XML content adheres to the rules of a well-formed XML document, which includes having a single root element.
+    //  Fragment - The Fragment conformance level allows the XML content to be a well-formed XML fragment, which can include multiple root elements or be part of a larger document.
+    //  None - The None conformance level disables conformance checking.
+    // DEFAULT: ConformanceLevel.Document
+    ConformanceLevel: ConformanceLevel
+
+    (*
+    The DtdProcessing property is an enumeration value that specifies how the XmlReader should process Document Type Definitions (DTDs) in the XML content.
+    DtdProcessing possible are: Prohibit, Parse, Ignore
+        Prohibit - The XmlReader should not process DTDs.
+        Parse - The XmlReader should parse DTDs.
+        Ignore - The XmlReader should ignore DTDs.
+    DEFAULT: DtdProcessing.Prohibit - The default value for DtdProcessing in XmlReaderSettings is DtdProcessing.Prohibit, which means that the XmlReader should not process DTDs by default. If you want to allow DTD processing, you can set this property to DtdProcessing.Parse or DtdProcessing.Ignore.
+    DtdProcessing.Ignore means that the XmlReader should ignore DTDs. This can be useful if you want to read XML content that contains DTDs without actually processing them.
+    *)
+    DtdProcessing: DtdProcessing
+
+    // Gets or sets a value indicating whether to ignore comments.
+    // DEFAULT: false
+    IgnoreComments: bool
+
+    (* 
+    The IgnoreProcessingInstructions property is a boolean value that indicates whether processing instructions should be ignored by the XmlReader.
+    Processing instructions are special XML elements that provide instructions to the XML processor. They are typically used to specify style sheets, character encoding, or other processing information.
+    For example, a processing instruction to specify a style sheet might look like this:
+    <?xml-stylesheet type="text/xsl" href="style.xsl"?>
+    Or another example might be a processing instruction to specify the character encoding:
+    <?xml version="1.0" encoding="UTF-8"?>
+    Or yet another processing instruction to specify a target for the document:
+    <?target instruction?> - This is a processing instruction with the target "target" and the data "instruction".
+    DEFAULT: false
+    *)
+    IgnoreProcessingInstructions: bool
+
+    // Gets or sets a value indicating whether to ignore white space nodes.
+    // DEFAULT: false   
+    IgnoreWhitespace: bool
+
+    // Gets or sets the line number offset for the XmlReader.  This is the line at which the reader starts reading.
+    // DEFAULT: 0
+    LineNumberOffset: int
+
+    // Gets or sets the line position offset for the XmlReader.  Here 'position' means the character position in the line.
+    // DEFAULT: 0
+    LinePositionOffset: int
+
+    // Gets or sets the maximum number of characters that can be read from an entity.  In the context of XML, an "entity" is a storage unit of data that can be referenced within an XML document. Entities can be used to define reusable content, such as special characters, strings, or even entire sections of an XML document.
+    // DEFAULT: 0 - The default value for MaxCharactersFromEntities in XmlReaderSettings is indeed 0.
+    //      This means that there is no limit on the number of characters that can be read from an entity by default. 
+    //      If you want to impose a limit to prevent excessively large entities from being processed, you can set this property to a specific value.
+    MaxCharactersFromEntities: int 
+    
+    // Gets or sets the maximum number of characters allowed in an XML document.
+    // DEFAULT: 0 - The default value for MaxCharactersInDocument in XmlReaderSettings is 0, which means that there is no limit on the number of characters allowed in an XML document. If you want to impose a limit on the size of the XML document that can be processed, you can set this property to a specific value.
+    MaxCharactersInDocument: int
+
+    (*
+    The NameTable property is an XmlNameTable object that is used to store and retrieve atomized strings in an XML document.
+    An XmlNameTable is a table that stores a collection of strings in a way that allows them to be compared efficiently. 
+    When you parse an XML document, the XmlReader uses the NameTable to store the element names, attribute names, and other strings that it encounters. 
+    This allows the XmlReader to compare strings by reference rather than by value, which can improve performance.
+    *)
+    NameTable: XmlNameTable
+
+    (*
+    To define an XmlSchemaSet in F#, you need to create an instance of the XmlSchemaSet class and add XML Schema Definition (XSD) files to it. The XmlSchemaSet class is used to store a collection of XML Schema definition language (XSD) schemas. This collection can then be used to validate XML documents against the schemas.
+
+    1. Load from a File:
+    You can load an XML schema from a file using the Add method of the XmlSchemaSet class.
+
+        open System.Xml.Schema
+
+        let schemaSet = XmlSchemaSet()
+        schemaSet.Add(null, "path/to/schema.xsd") |> ignore
+
+
+    2. Load from a String:
+    You can load an XML schema from a string by creating an XmlReader from the string and then adding it to the XmlSchemaSet.
+
+        open System.Xml
+        open System.Xml.Schema
+
+        let schemaString = """
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="example" type="xs:string"/>
+        </xs:schema>
+        """
+        let schemaSet = XmlSchemaSet()
+        use reader = new System.IO.StringReader(schemaString)
+        schemaSet.Add(null, XmlReader.Create(reader)) |> ignore
+
+
+    3. Load from a Stream:
+    You can load an XML schema from a stream, such as a file stream or a memory stream.
+
+        open System.IO
+        open System.Xml
+        open System.Xml.Schema
+
+        let schemaSet = XmlSchemaSet()
+        use stream = File.OpenRead("path/to/schema.xsd")
+        schemaSet.Add(null, XmlReader.Create(stream)) |> ignore
+
+
+    4. Load from an Embedded Resource:
+    If your schema is embedded as a resource in your assembly, you can load it using a stream from the assembly's resources.
+
+        open System.Reflection
+        open System.Xml
+        open System.Xml.Schema
+
+        let assembly = Assembly.GetExecutingAssembly()
+        use stream = assembly.GetManifestResourceStream("Namespace.path.to.schema.xsd")
+        let schemaSet = XmlSchemaSet()
+        schemaSet.Add(null, XmlReader.Create(stream)) |> ignore
+
+
+    5. Load from a URI:
+    You can load an XML schema from a URI, such as a URL.
+
+        open System.Xml.Schema
+
+        let schemaSet = XmlSchemaSet()
+        schemaSet.Add(null, "http://example.com/schema.xsd") |> ignore
+
+
+    6. Load Multiple Schemas:
+    You can add multiple schemas to an XmlSchemaSet.
+
+        open System.Xml.Schema
+
+        let schemaSet = XmlSchemaSet()
+        schemaSet.Add(null, "path/to/schema1.xsd") |> ignore
+        schemaSet.Add(null, "path/to/schema2.xsd") |> ignore
+
+
+    7. Compile the Schema Set:
+    After adding schemas, you can compile the XmlSchemaSet to check for validity and resolve references.
+
+    8. Here is a complete example that demonstrates several of these methods:
+
+        open System
+        open System.IO
+        open System.Xml
+        open System.Xml.Schema
+
+        // Define an XmlSchemaSet
+        let schemaSet = XmlSchemaSet()
+
+        // Load schema from a file
+        schemaSet.Add(null, "path/to/schema1.xsd") |> ignore
+
+        // Load schema from a string
+        let schemaString = """
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="example" type="xs:string"/>
+        </xs:schema>
+        """
+        use reader = new StringReader(schemaString)
+        schemaSet.Add(null, XmlReader.Create(reader)) |> ignore
+
+        // Load schema from a stream
+        use stream = File.OpenRead("path/to/schema2.xsd")
+        schemaSet.Add(null, XmlReader.Create(stream)) |> ignore
+
+        // Load schema from a URI
+        schemaSet.Add(null, "http://example.com/schema3.xsd") |> ignore
+
+        // Compile the schema set
+        schemaSet.Compile()
+
+        // The schemaSet can now be used to validate XML documents  
+    DEFAULT: XmlSchemaSet()
+    *)
+    Schemas: XmlSchemaSet
+
+    (*
+    The ValidationFlags property is an enumeration value that specifies the validation flags to use when validating an XML document.
+    ValidationFlags possible are: None, ProcessSchemaLocation, ProcessInlineSchema, ReportValidationWarnings, ProcessIdentityConstraints, AllowXmlAttributes
+        None - No validation flags are set.
+        ProcessSchemaLocation - The XmlReader should process schema location hints in the XML document.
+        ProcessInlineSchema - The XmlReader should process inline schemas in the XML document.
+        ReportValidationWarnings - The XmlReader should report validation warnings.
+        ProcessIdentityConstraints - The XmlReader should process identity constraints.
+        AllowXmlAttributes - The XmlReader should allow XML attributes.
+
+    The ValidationFlags in an XmlReaderSettings object are not mutually exclusive. You can combine multiple ValidationFlags using a bitwise OR operation. The ValidationFlags property is a bitwise combination of the XmlSchemaValidationFlags enumeration values, which allows you to specify multiple validation behaviors simultaneously.
+    DEFAULT: XmlSchemaValidationFlags.None
+    *)
+    ValidationFlags: XmlSchemaValidationFlags
+
+    (* 
+    The ValidationEventHandler property is an event handler that is called when the XmlReader encounters a validation event.
+    The ValidationEventHandler delegate might be defined as follows:
+
+        // Define the validation event handler
+        let validationEventHandler = ValidationEventHandler(fun sender args ->
+            match args.Severity with
+            | XmlSeverityType.Warning ->
+                printfn "Warning: %s" args.Message
+            | XmlSeverityType.Error ->
+                printfn "Error: %s" args.Message
+            | _ -> ()
+        )
+    DEFAULT: ValidationEventHandler(fun sender args -> ())
+    *)
+    ValidationEventHandler: ValidationEventHandler
+
+    (*
+    If you set the ValidationType property to a value other than None, the XmlReader will perform validation according to that type.
+    Validation types possible are: None, Auto, DTD, XDR, Schema (Ex: Validationtype.DTD)
+        None - No validation is performed.
+        Auto - The XmlReader automatically detects the type of validation required based on the XML content.
+        DTD - The XmlReader validates the XML content against a Document Type Definition (DTD).
+        XDR - The XmlReader validates the XML content against an XML-Data Reduced (XDR) schema.
+        Schema - The XmlReader validates the XML content against an XML Schema Definition (XSD) schema.
+    These validation types are mutually exclusive. 
+    DEFAULT: ValidationType.None
+    *)
+    ValidationType: ValidationType    
+
+    (*
+    The XmlResolver property is an XmlResolver object that is used to resolve external resources such as entities, DTDs, and schemas.
+    For example:
+    
+            // Define an XmlResolver
+            let xmlResolver = XmlUrlResolver()
+    
+            // Set the XmlResolver property
+            let settings = XmlReaderSettings()
+            settings.XmlResolver <- xmlResolver
+    DEFAULT: XmlUrlResolver()
+    *)
+    XmlResolver: XmlResolver
+    }
+
+#!fsharp
+
+let defaultXMLReaderSettings = {
+    Async = false
+    CheckCharacters = false
+    CloseInput = false 
+    ConformanceLevel = ConformanceLevel.Document
+    DtdProcessing = DtdProcessing.Prohibit
+    IgnoreComments = false
+    IgnoreProcessingInstructions = false
+    IgnoreWhitespace = false
+    LineNumberOffset = 0
+    LinePositionOffset = 0
+    MaxCharactersFromEntities = 0
+    MaxCharactersInDocument = 0
+    NameTable = null
+    Schemas = XmlSchemaSet()
+    ValidationFlags = XmlSchemaValidationFlags.None
+    ValidationEventHandler = ValidationEventHandler(fun sender args -> ())
+    ValidationType = ValidationType.None
+    XmlResolver = XmlUrlResolver()
+    }
+
+#!fsharp
+
+open System.Xml
+open System.Xml.Schema
+
+/// Builds an XmlReaderSettings object from the provided XMLReaderSettings.
+/// 
+/// This function takes an XMLReaderSettings object and creates a new XmlReaderSettings
+/// object with the same properties. It also sets the DtdProcessing property to Prohibit.
+/// 
+/// Parameters:
+///   - settings: The XMLReaderSettings object to copy settings from.
+/// 
+/// Returns:
+///   A new XmlReaderSettings object with the same properties as the provided settings.
+let buildXmlReaderSettings (settings: XMLReaderSettings) : XmlReaderSettings =
+    let xmlReaderSettings = XmlReaderSettings()
+    xmlReaderSettings.Async <- settings.Async
+    xmlReaderSettings.CheckCharacters <- settings.CheckCharacters
+    xmlReaderSettings.CloseInput <- settings.CloseInput
+    xmlReaderSettings.ConformanceLevel <- settings.ConformanceLevel
+    xmlReaderSettings.DtdProcessing <- settings.DtdProcessing
+    xmlReaderSettings.IgnoreComments <- settings.IgnoreComments
+    xmlReaderSettings.IgnoreProcessingInstructions <- settings.IgnoreProcessingInstructions
+    xmlReaderSettings.IgnoreWhitespace <- settings.IgnoreWhitespace
+    xmlReaderSettings.LineNumberOffset <- settings.LineNumberOffset
+    xmlReaderSettings.LinePositionOffset <- settings.LinePositionOffset
+    xmlReaderSettings.MaxCharactersFromEntities <- settings.MaxCharactersFromEntities
+    xmlReaderSettings.MaxCharactersInDocument <- settings.MaxCharactersInDocument
+    xmlReaderSettings.NameTable <- settings.NameTable
+    xmlReaderSettings.Schemas <- settings.Schemas
+    xmlReaderSettings.ValidationFlags <- settings.ValidationFlags
+    xmlReaderSettings.ValidationEventHandler.AddHandler(settings.ValidationEventHandler)
+    xmlReaderSettings.ValidationType <- settings.ValidationType
+    xmlReaderSettings.XmlResolver <- settings.XmlResolver
+    
+    xmlReaderSettings
+
+#!fsharp
+
+open System
+open System.Xml
+
+let counter = Count()
+
+// use XmlReader to read XML from string into XMLElement and XMLAttribute types
+let readXml (xmlString: string) (pXMLSettings: XMLReaderSettings) : list<XMLNode> =
+    counter.Increment("start readXml")
+    let nodes = ResizeArray<XMLNode>()
+
+    // Load the XML string into an XmlDocument
+    let xmlDoc = XmlDocument()
+    xmlDoc.Load(XmlReader.Create((new System.IO.StringReader(xmlString)), (buildXmlReaderSettings pXMLSettings)))
+
+    let rec readNode (node: XmlNode) : XMLNode =
+        match node with
+        | :? XmlComment as comment ->
+            counter.Increment("Comment")
+            { CommentNode = comment; Name = comment.Name; Value = comment.Value } |> Comment
+        | :? XmlText as text ->
+            counter.Increment("Text")
+            { TextNode = text; Name = text.Name; Value = text.Value} |> Text
+        | :? XmlCDataSection as cdata -> 
+            counter.Increment("CDATA")
+            { CDataNode = cdata; Name = cdata.Name; Value = cdata.Value } |> CData
+        | :? XmlEntityReference as entityref ->
+            counter.Increment("EntityReference")
+            { EntityReferenceNode = entityref; Name = entityref.Name } |> EntityReference
+        | :? XmlWhitespace as whitespace ->
+            counter.Increment("Whitespace")
+            { WhitespaceNode = whitespace; Name = whitespace.Name; Value = whitespace.Value } |> Whitespace
+        | :? XmlSignificantWhitespace as sw ->
+            counter.Increment("SignificantWhitespace")
+            { SignificantWhitespaceNode = sw; Name = sw.Name; Value = sw.Value } |> SignificantWhitespace
+        | :? XmlProcessingInstruction as pi ->
+            counter.Increment("ProcessingInstruction")
+            { ProcessingInstructionNode = pi; Name = pi.Name; Target = pi.Name; Data = pi.Value } |> ProcessingInstruction
+        | :? XmlDocumentType as docType ->
+            { DocumentTypeNode = docType; Name = docType.Name; PublicId = docType.PublicId; SystemId = docType.SystemId; InternalSubset = docType.InternalSubset } |> DocumentType
+        | :? XmlEntity as entity->
+            counter.Increment("Entity")
+            { EntityNode = entity; Name = entity.Name; PublicId = entity.PublicId; SystemId = entity.SystemId; BaseUri = entity.BaseURI } |> Entity
+        | :? XmlNotation as notation ->
+            counter.Increment("Notation")
+            { NotationNode = notation; Name = notation.Name; PublicId = notation.PublicId; SystemId = notation.SystemId; BaseUri = notation.BaseURI } |> Notation
+        | :? XmlDeclaration as decl ->
+            counter.Increment("Declaration")
+            { DeclarationNode = decl; Name = decl.Name; Version = decl.Version; Encoding = decl.Encoding; Standalone = decl.Standalone } |> Declaration
+        | :? XmlDocument as doc ->
+            counter.Increment("Document")
+            { DocumentNode = doc; Name = doc.Name; Root = readNode doc.DocumentElement } |> Document
+        | :? XmlDocumentFragment as docFrag ->
+            counter.Increment("DocumentFragment")
+            let children = ResizeArray<XMLNode>()
+            for childNode in docFrag.ChildNodes do
+                children.Add(readNode childNode)
+            { DocumentFragmentNode = docFrag; Name = docFrag.Name; Children = if children.Count > 0 then Some (List.ofSeq children) else None } |> DocumentFragment
+        | :? XmlElement ->
+            counter.Increment("Element")
+            let name = node.Name
+            // F# compliant remapping of XmlAttributeCollection to a list of XMLAttribute
+            let rec collectAttributes (attributes : XmlAttributeCollection) : List<XMLAttribute> =
+                let rec loop (index : int) (acc : List<XMLAttribute>) =
+                    if index < attributes.Count then
+                        let attr = attributes.[index]
+                        loop (index + 1) ( {AttributeNode = attr; Name = attr.Name; Value = attr.Value} :: acc)
+                    else
+                        acc
+                loop 0 []
+            let attributes = collectAttributes node.Attributes
+            let children = ResizeArray<XMLNode>()
+            let mutable innerText = None
+            for childNode in node.ChildNodes do
+                children.Add(readNode childNode)
+            { 
+                ElementNode = node :?> XmlElement
+                Name = name
+                Attributes = Some attributes
+                Children = if children.Count > 0 then Some (List.ofSeq children) else None
+                InnerText = innerText
+            } |> Element
+        | _ -> counter.Increment("Other")
+               failwith $"Got XmlNodeType ({node.NodeType}) Expected one of: Element, Text, CDATA, Comment, ProcessingInstruction, Whitespace, SignificantWhitespace."
+
+    // Start reading from the document element
+    nodes.Add(readNode xmlDoc.DocumentElement)
+
+    List.ofSeq nodes
+
+#!fsharp
+
+// Example usage
+let xmlString = """<?xml version="1.0"?>
+<!DOCTYPE root [
+    <!ELEMENT root ANY>
+    <!ELEMENT element1 ANY>
+    <!ELEMENT element2 ANY>
+    <!ELEMENT element3 ANY>
+    <!ELEMENT element4 ANY>
+    <!ELEMENT element5 ANY>
+    <!ELEMENT element6 ANY>
+    <!ELEMENT element7 ANY>
+    <!ELEMENT element8 ANY>
+    <!ELEMENT element9 ANY>
+    <!ELEMENT element10 ANY>
+    <!ELEMENT element11 ANY>
+    <!ELEMENT element12 ANY>
+    <!ELEMENT element13 ANY>
+    <!ELEMENT element14 ANY>
+    <!ELEMENT element15 ANY>
+    <!ELEMENT element16 ANY>
+    <!ELEMENT element17 ANY>
+    <!ENTITY entity "Entity content">
+    <!ENTITY gt "&gt;">
+]>
+<root>
+    <!-- This is a comment -->
+    <element1 attr1="value1" attr2="value2">Text1</element1>
+    <element2 attr3="value3">
+        <child1>ChildText1</child1>
+        <child2 attr4="value4" />
+    </element2>
+    <![CDATA[Some unparsed text]]>
+    <?pi processing instruction?>
+    <element3>Whitespace: </element3> 
+    <element4> 
+        <child3>SignificantWhitespace: </child3>
+    </element4>
+    &entity;
+    &gt;
+</root>
+"""
+
+#!fsharp
+
+// test XmlReaderSettings for the XML given above.
+let xmlSettings_DtdProcessing_Parse = { defaultXMLReaderSettings with DtdProcessing = DtdProcessing.Parse }
+
+#!fsharp
+
+// open System
+// open System.Xml
+// open System.Xml.Schema
+
+// // use the readXml function to read the XML string into XMLNode types and print them to the console.  - THIS WORKS but is noisy
+// let nodes = readXml xmlString xmlSettings_DtdProcessing_Parse
+// Console.WriteLine("\nNode count: {0}", nodes.Length)
+// for node in nodes do
+//     Console.WriteLine(node)
+
+#!fsharp
+
+let xmlStringWithInlineSchema = """<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root">
+      <xsd:complexType>
+        <xsd:sequence>
+          <xsd:element name="item" minOccurs="1" maxOccurs="unbounded">
+            <xsd:complexType>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="value" type="xsd:int" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <item name="Item1" value="100" />
+  <item name="Item2" value="200" />
+</root>
+"""
+
+#!fsharp
+
+open System
+open System.Xml
+open System.Xml.Schema
+
+
+// Define the XmlReaderSettings with schema validation
+let xmlSettingsWithInlineSchema = XmlReaderSettings()
+xmlSettingsWithInlineSchema.ValidationType <- ValidationType.Schema
+xmlSettingsWithInlineSchema.XmlResolver <- XmlUrlResolver() // Enable retrieval of external resources
+
+// Define a validation event handler to handle validation errors
+let validationEventHandler = ValidationEventHandler(fun sender args ->
+    match args.Severity with
+    | XmlSeverityType.Warning -> printfn "Warning: %s" args.Message
+    | XmlSeverityType.Error -> printfn "Error: %s" args.Message
+    | _ -> failwith "Unknown validation error"
+)
+xmlSettingsWithInlineSchema.ValidationEventHandler <- validationEventHandler
+
+// Read and validate the XML
+let stringReader = new System.IO.StringReader(xmlStringWithInlineSchema)
+use reader = XmlReader.Create(stringReader, xmlSettingsWithInlineSchema)
+while reader.Read() do
+    // Process the XML document
+    ()
+
+// Example usage
+let nodesWithInlineSchema = readXml xmlStringWithInlineSchema xmlSettingsWithInlineSchema
+Console.WriteLine("\nNode count: {0}", nodesWithInlineSchema.Length)
+for node in nodesWithInlineSchema do
+    Console.WriteLine(node)
+
+#!fsharp
+
+let xmlStringWithInlineSchema = """
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd">
+    <element1 attr1="value1" attr2="value2">Text1</element1>
+    <element2 attr3="value3">
+        <child1>ChildText1</child1>
+        <child2 attr4="value4" />
+    </element2>
+    <![CDATA[Some unparsed text]]>
+    <?pi processing instruction?>
+    <element3>Whitespace: </element3> 
+    <element4> 
+        <child3>SignificantWhitespace: </child3>
+    </element4>
+    <element5>Text5</element5>
+    &entity;
+    <element6>Text6</element6>
+    &gt;
+</root>
+"""
+
+#!fsharp
+
+let schemaString = """
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="element1" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:attribute name="attr1" type="xs:string" use="required"/>
+                        <xs:attribute name="attr2" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="element2" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="child1" minOccurs="1" maxOccurs="1" type="xs:string"/>
+                            <xs:element name="child2" minOccurs="1" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:attribute name="attr4" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="attr3" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="element3" minOccurs="1" maxOccurs="1" type="xs:string"/>
+                <xs:element name="element4" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="child3" minOccurs="1" maxOccurs="1" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+"""
+
+#!fsharp
+
+let XmlSchemaSet = System.Xml.Schema.XmlSchemaSet()
+let stringReader = new System.IO.StringReader(schemaString)
+XmlSchemaSet.Add(null, XmlReader.Create(stringReader)) |> ignore
+let xmlSettingsWithInlineSchema = { defaultXMLReaderSettings with Schemas = XmlSchemaSet; 
+                                                                  ValidationType = ValidationType.Schema }
+
+let nodesWithInlineSchema = readXml xmlStringWithInlineSchema xmlSettingsWithInlineSchema
+Console.WriteLine("\nNode count: {0}", nodesWithInlineSchema.Length)
+for node in nodesWithInlineSchema do
+    Console.WriteLine(node)
