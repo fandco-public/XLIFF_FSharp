@@ -11,14 +11,14 @@ Uses Hindley-Miller type system (polymorphic lambda calculus) and as much as pos
 #!markdown
 
 Plan:
-* Define F# types capable of representing XML data structures.
+* Define F# types capable of representing XML data structures.      - DONE
 * Define functions
+    * to read any XML data strcture from the filesystem.            - DONE
+    * that validate any XML data structure against a DTD.           - DONE
+    * that validate any XML data structure against a schema.        - DONE
+    * that use the above types to build XLIFF v1.2 data structures. - DONE
     * that can add XML elements and properties to the above types.
-    * that use the above types to build XLIFF v1.2 data structures.
     * to write any XML data structure to the filesystem.
-    * to read any XML data strcture from the filesystem.
-    * that validate any XML data structure against a schema.
-    * that validate any XML data structure against a DTD.
 
 #!fsharp
 
@@ -569,195 +569,241 @@ let readXml (xmlString: string) (pXMLSettings: XMLReaderSettings) : list<XMLNode
 
 #!fsharp
 
-// Example DTD usage
-let xmlString = """<?xml version="1.0"?>
-<!DOCTYPE root [
-    <!ELEMENT root ANY>
-    <!ELEMENT element1 ANY>
-    <!ELEMENT element2 ANY>
-    <!ELEMENT element3 ANY>
-    <!ELEMENT element4 ANY>
-    <!ELEMENT element5 ANY>
-    <!ELEMENT element6 ANY>
-    <!ELEMENT element7 ANY>
-    <!ELEMENT element8 ANY>
-    <!ELEMENT element9 ANY>
-    <!ELEMENT element10 ANY>
-    <!ELEMENT element11 ANY>
-    <!ELEMENT element12 ANY>
-    <!ELEMENT element13 ANY>
-    <!ELEMENT element14 ANY>
-    <!ELEMENT element15 ANY>
-    <!ELEMENT element16 ANY>
-    <!ELEMENT element17 ANY>
-    <!ENTITY entity "Entity content">
-    <!ENTITY gt "&gt;">
-]>
-<root>
-    <!-- This is a comment -->
-    <element1 attr1="value1" attr2="value2">Text1</element1>
-    <element2 attr3="value3">
-        <child1>ChildText1</child1>
-        <child2 attr4="value4" />
-    </element2>
-    <![CDATA[Some unparsed text]]>
-    <?pi processing instruction?>
-    <element3>Whitespace: </element3> 
-    <element4> 
-        <child3>SignificantWhitespace: </child3>
-    </element4>
-    &entity;
-    &gt;
-</root>
-"""
+// // Example DTD usage
+// let xmlString = """<?xml version="1.0"?>
+// <!DOCTYPE root [
+//     <!ELEMENT root ANY>
+//     <!ELEMENT element1 ANY>
+//     <!ELEMENT element2 ANY>
+//     <!ELEMENT element3 ANY>
+//     <!ELEMENT element4 ANY>
+//     <!ELEMENT element5 ANY>
+//     <!ELEMENT element6 ANY>
+//     <!ELEMENT element7 ANY>
+//     <!ELEMENT element8 ANY>
+//     <!ELEMENT element9 ANY>
+//     <!ELEMENT element10 ANY>
+//     <!ELEMENT element11 ANY>
+//     <!ELEMENT element12 ANY>
+//     <!ELEMENT element13 ANY>
+//     <!ELEMENT element14 ANY>
+//     <!ELEMENT element15 ANY>
+//     <!ELEMENT element16 ANY>
+//     <!ELEMENT element17 ANY>
+//     <!ENTITY entity "Entity content">
+//     <!ENTITY gt "&gt;">
+// ]>
+// <root>
+//     <!-- This is a comment -->
+//     <element1 attr1="value1" attr2="value2">Text1</element1>
+//     <element2 attr3="value3">
+//         <child1>ChildText1</child1>
+//         <child2 attr4="value4" />
+//     </element2>
+//     <![CDATA[Some unparsed text]]>
+//     <?pi processing instruction?>
+//     <element3>Whitespace: </element3> 
+//     <element4> 
+//         // <child3>SignificantWhitespace: </child3>
+//     </element4>
+//     &entity;
+//     &gt;
+// </root>
+// """
 
-open System
-open System.Xml
-open System.Xml.Schema
+// open System
+// open System.Xml
+// open System.Xml.Schema
 
-// test XmlReaderSettings for the XML given above.
-let xmlSettings_DtdProcessing_Parse = { defaultXMLReaderSettings with DtdProcessing = DtdProcessing.Parse }
+// // test XmlReaderSettings for the XML given above.
+// let xmlSettings_DtdProcessing_Parse = { defaultXMLReaderSettings with DtdProcessing = DtdProcessing.Parse }
 
-// use the readXml function to read the XML string into XMLNode types and print them to the console.  - THIS WORKS but is noisy
-let nodes = readXml xmlString xmlSettings_DtdProcessing_Parse
-Console.WriteLine("\nNode count: {0}", nodes.Length)
-for node in nodes do
-    Console.WriteLine(node)
-
-#!fsharp
-
-// example inline schema usage
-let xmlStringWithDirectlyInlineSchema = """<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:element name="root">
-      <xsd:complexType>
-        <xsd:sequence>
-          <xsd:element name="item" minOccurs="1" maxOccurs="unbounded">
-            <xsd:complexType>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-              <xsd:attribute name="value" type="xsd:int" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:sequence>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <item name="Item1" value="100" />
-  <item name="Item2" value="200" />
-</root>
-"""
-
-open System
-open System.Xml
-open System.Xml.Schema
-
-// Define a validation event handler to handle validation errors
-let validationEventHandler = ValidationEventHandler(fun sender args ->
-    match args.Severity with
-    | XmlSeverityType.Warning -> printfn "Warning: %s" args.Message
-    | XmlSeverityType.Error -> printfn "Error: %s" args.Message
-    | _ -> failwith "Unknown validation error"
-)
-
-// Define the XmlReaderSettings with schema validation
-let XMLSettingsWithDirectlyInlineSchema = 
-    { defaultXMLReaderSettings with ValidationType = ValidationType.Schema; 
-                                    XmlResolver = XmlUrlResolver();
-                                    ValidationEventHandler = validationEventHandler }
-
-// Example usage
-let nodesWithInlineSchema = readXml xmlStringWithDirectlyInlineSchema XMLSettingsWithDirectlyInlineSchema
-Console.WriteLine("\nNode count: {0}", nodesWithInlineSchema.Length)
-for node in nodesWithInlineSchema do
-    Console.WriteLine(node)
+// // use the readXml function to read the XML string into XMLNode types and print them to the console.  - THIS WORKS but is noisy
+// let nodes = readXml xmlString xmlSettings_DtdProcessing_Parse
+// Console.WriteLine("\nNode count: {0}", nodes.Length)
+// for node in nodes do
+//     Console.WriteLine(node)
 
 #!fsharp
 
-// example usage with longer inline schema
-let xmlStringWithLongerInlineSchema = """
-<!DOCTYPE root [
-    <!ENTITY entity "Entity content">
-]>
-<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd">
-    <element1 attr1="value1" attr2="value2">Text1</element1>
-    <element2 attr3="value3">
-        <child1>ChildText1</child1>
-        <child2 attr4="value4" />
-    </element2>
-    <![CDATA[Some unparsed text]]>
-    <?pi processing instruction?>
-    <element3>Whitespace: </element3> 
-    <element4> 
-        <child3>SignificantWhitespace: </child3>
-    </element4>
-    <element5>Text5</element5>
-    &entity;
-    <element6>Text6</element6>
-    &gt;
-</root>
-"""
+// // example inline schema usage
+// let xmlStringWithDirectlyInlineSchema = """<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+//   <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+//     <xsd:element name="root">
+//       <xsd:complexType>
+//         <xsd:sequence>
+//           <xsd:element name="item" minOccurs="1" maxOccurs="unbounded">
+//             <xsd:complexType>
+//               <xsd:attribute name="name" type="xsd:string" use="required" />
+//               <xsd:attribute name="value" type="xsd:int" use="required" />
+//             </xsd:complexType>
+//           </xsd:element>
+//         </xsd:sequence>
+//       </xsd:complexType>
+//     </xsd:element>
+//   </xsd:schema>
+//   <item name="Item1" value="100" />
+//   <item name="Item2" value="200" />
+// </root>
+// """
 
-let schemaStringWithLongerInlineSchema = """
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="root">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="element1" minOccurs="1" maxOccurs="1">
-                    <xs:complexType>
-                        <xs:attribute name="attr1" type="xs:string" use="required"/>
-                        <xs:attribute name="attr2" type="xs:string" use="required"/>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="element2" minOccurs="1" maxOccurs="1">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="child1" minOccurs="1" maxOccurs="1" type="xs:string"/>
-                            <xs:element name="child2" minOccurs="1" maxOccurs="1">
-                                <xs:complexType>
-                                    <xs:attribute name="attr4" type="xs:string" use="required"/>
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                        <xs:attribute name="attr3" type="xs:string" use="required"/>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="element3" minOccurs="1" maxOccurs="1" type="xs:string"/>
-                <xs:element name="element4" minOccurs="1" maxOccurs="1">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="child3" minOccurs="1" maxOccurs="1" type="xs:string"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-</xs:schema>
-"""
+// open System
+// open System.Xml
+// open System.Xml.Schema
 
-open System
+// // Define a validation event handler to handle validation errors
+// let validationEventHandler = ValidationEventHandler(fun sender args ->
+//     match args.Severity with
+//     | XmlSeverityType.Warning -> printfn "Warning: %s" args.Message
+//     | XmlSeverityType.Error -> printfn "Error: %s" args.Message
+//     | _ -> failwith "Unknown validation error"
+// )
+
+// // Define the XmlReaderSettings with schema validation
+// let XMLSettingsWithDirectlyInlineSchema = 
+//     { defaultXMLReaderSettings with ValidationType = ValidationType.Schema; 
+//                                     XmlResolver = XmlUrlResolver();
+//                                     ValidationEventHandler = validationEventHandler }
+
+// // Example usage
+// let nodesWithInlineSchema = readXml xmlStringWithDirectlyInlineSchema XMLSettingsWithDirectlyInlineSchema
+// Console.WriteLine("\nNode count: {0}", nodesWithInlineSchema.Length)
+// for node in nodesWithInlineSchema do
+//     Console.WriteLine(node)
+
+#!fsharp
+
+// // example usage with longer inline schema
+// let xmlStringWithLongerInlineSchema = """
+// <!DOCTYPE root [
+//     <!ENTITY entity "Entity content">
+// ]>
+// <root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd">
+//     <element1 attr1="value1" attr2="value2">Text1</element1>
+//     <element2 attr3="value3">
+//         <child1>ChildText1</child1>
+//         <child2 attr4="value4" />
+//     </element2>
+//     <![CDATA[Some unparsed text]]>
+//     <?pi processing instruction?>
+//     <element3>Whitespace: </element3> 
+//     <element4> 
+//         <child3>SignificantWhitespace: </child3>
+//     </element4>
+//     <element5>Text5</element5>
+//     &entity;
+//     <element6>Text6</element6>
+//     &gt;
+// </root>
+// """
+
+// let schemaStringWithLongerInlineSchema = """
+// <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+//     <xs:element name="root">
+//         <xs:complexType>
+//             <xs:sequence>
+//                 <xs:element name="element1" minOccurs="1" maxOccurs="1">
+//                     <xs:complexType>
+//                         <xs:attribute name="attr1" type="xs:string" use="required"/>
+//                         <xs:attribute name="attr2" type="xs:string" use="required"/>
+//                     </xs:complexType>
+//                 </xs:element>
+//                 <xs:element name="element2" minOccurs="1" maxOccurs="1">
+//                     <xs:complexType>
+//                         <xs:sequence>
+//                             <xs:element name="child1" minOccurs="1" maxOccurs="1" type="xs:string"/>
+//                             <xs:element name="child2" minOccurs="1" maxOccurs="1">
+//                                 <xs:complexType>
+//                                     <xs:attribute name="attr4" type="xs:string" use="required"/>
+//                                 </xs:complexType>
+//                             </xs:element>
+//                         </xs:sequence>
+//                         <xs:attribute name="attr3" type="xs:string" use="required"/>
+//                     </xs:complexType>
+//                 </xs:element>
+//                 <xs:element name="element3" minOccurs="1" maxOccurs="1" type="xs:string"/>
+//                 <xs:element name="element4" minOccurs="1" maxOccurs="1">
+//                     <xs:complexType>
+//                         <xs:sequence>
+//                             <xs:element name="child3" minOccurs="1" maxOccurs="1" type="xs:string"/>
+//                         </xs:sequence>
+//                     </xs:complexType>
+//                 </xs:element>
+//             </xs:sequence>
+//         </xs:complexType>
+//     </xs:element>
+// </xs:schema>
+// """
+
+// open System
+// open System.Xml
+// open System.Xml.Schema
+
+
+// // Define a validation event handler to handle validation errors
+// let validationEventHandler = ValidationEventHandler(fun sender args ->
+//     match args.Severity with
+//     | XmlSeverityType.Warning -> printfn "Warning: %s" args.Message
+//     | XmlSeverityType.Error -> printfn "Error: %s" args.Message
+//     | _ -> failwith "Unknown validation error"
+// )
+
+// let XmlSchemaSet = System.Xml.Schema.XmlSchemaSet()
+// let stringReader = new System.IO.StringReader(schemaStringWithLongerInlineSchema)
+// XmlSchemaSet.Add(null, XmlReader.Create(stringReader)) |> ignore
+// let xmlSettingsWithInlineSchema = 
+//     { defaultXMLReaderSettings with DtdProcessing = DtdProcessing.Parse;
+//                                     Schemas = XmlSchemaSet; 
+//                                     XmlResolver = XmlUrlResolver();
+//                                     ValidationType = ValidationType.Schema }
+
+// let nodesWithInlineSchema = readXml xmlStringWithLongerInlineSchema xmlSettingsWithInlineSchema
+// Console.WriteLine("\nNode count: {0}", nodesWithInlineSchema.Length)
+// for node in nodesWithInlineSchema do
+//     Console.WriteLine(node)
+
+#!fsharp
+
 open System.Xml
 open System.Xml.Schema
 
+// read an XLIFF v1.2 file using Schemas read in from the filesystem.
+// your XLIFF files are located at ../../StoreImportListingFileGenerator/SLFG_MS/MultilingualResources/SLFG_MS directory.
+// the XLIFF v1.2 schema is located at ./Schemas/XLIFF_v1_2/XLIFF_1.2.xsd
 
-// Define a validation event handler to handle validation errors
-let validationEventHandler = ValidationEventHandler(fun sender args ->
-    match args.Severity with
-    | XmlSeverityType.Warning -> printfn "Warning: %s" args.Message
-    | XmlSeverityType.Error -> printfn "Error: %s" args.Message
-    | _ -> failwith "Unknown validation error"
-)
+// Custom XmlUrlResolver to resolve the XLIFF v1.2 schema URL
+type XliffXmlUrlResolver() =
+    inherit XmlUrlResolver()
 
-let XmlSchemaSet = System.Xml.Schema.XmlSchemaSet()
-let stringReader = new System.IO.StringReader(schemaStringWithLongerInlineSchema)
-XmlSchemaSet.Add(null, XmlReader.Create(stringReader)) |> ignore
-let xmlSettingsWithInlineSchema = 
+    override this.ResolveUri(baseUri: Uri, relativeUri: string) : Uri =
+        if relativeUri = "urn:oasis:names:tc:xliff:document:1.2" then
+            Uri("http://docs.oasis-open.org/xliff/v1.2/cs02/xliff-core-1.2-transitional.xsd")
+        else
+            base.ResolveUri(baseUri, relativeUri)
+
+    override this.GetEntity(absoluteUri: Uri, role: string, ofObjectToReturn: Type) : obj =
+        if absoluteUri.ToString() = "http://docs.oasis-open.org/xliff/v1.2/cs02/xliff-core-1.2-transitional.xsd" then
+            let webRequest = System.Net.WebRequest.Create(absoluteUri)
+            let webResponse = webRequest.GetResponse()
+            webResponse.GetResponseStream()
+        else
+            base.GetEntity(absoluteUri, role, ofObjectToReturn)
+
+let xliffFileBasedSchemaSet = XmlSchemaSet()
+xliffFileBasedSchemaSet.Add( "urn:oasis:names:tc:xliff:document:1.2", 
+                           "./Schemas/XLIFF_v1_2/xliff-core-1.2-transitional.xsd") |> ignore
+xliffFileBasedSchemaSet.Add( "http://www.w3.org/XML/1998/namespace",
+                           "./Schemas/XML/xml.xsd") |> ignore 
+xliffFileBasedSchemaSet.Compile()
+
+let xmlReaderSettingsForXliffUsingFileBasedSchema = 
     { defaultXMLReaderSettings with DtdProcessing = DtdProcessing.Parse;
-                                    Schemas = XmlSchemaSet; 
-                                    XmlResolver = XmlUrlResolver();
+                                    Schemas = XmlSchemaSet();
+                                    XmlResolver = XliffXmlUrlResolver();
                                     ValidationType = ValidationType.Schema }
 
-let nodesWithInlineSchema = readXml xmlStringWithLongerInlineSchema xmlSettingsWithInlineSchema
-Console.WriteLine("\nNode count: {0}", nodesWithInlineSchema.Length)
-for node in nodesWithInlineSchema do
-    Console.WriteLine(node)
+#!fsharp
+
+let xliffFile = "../../StoreImportListingFileGenerator/SLFG_MS/MultilingualResources/SLFG_MS.es.xlf"
+
+readXml (System.IO.File.ReadAllText xliffFile) xmlReaderSettingsForXliffUsingFileBasedSchema
