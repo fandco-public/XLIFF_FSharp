@@ -15,8 +15,8 @@ Plan:
 * Define functions
     * to read any XML data strcture from the filesystem.            - DONE
     * that validate any XML data structure against a DTD.           - DONE
-    * that validate any XML data structure against a schema.        - DONE
     * that use the above types to build XLIFF v1.2 data structures. - DONE
+    * that validate any XML data structure against a schema.
     * that can add XML elements and properties to the above types.
     * to write any XML data structure to the filesystem.
 
@@ -34,6 +34,11 @@ type Count() =
     member this.Increment(message: string) =
         count <- count + 1
         Console.WriteLine(sprintf "%s: %d" message count)
+
+    member this.Increment(message: string, nesting_level: int) =
+        count <- count + 1
+        let tabs = String.replicate nesting_level "\t"
+        Console.WriteLine(sprintf "%s%s: %d" tabs message count)
 
 #!fsharp
 
@@ -488,53 +493,57 @@ let readXml (xmlString: string) (pXMLSettings: XMLReaderSettings) : list<XMLNode
     counter.Increment("start readXml")
     let nodes = ResizeArray<XMLNode>()
 
+    let nestingLevel = 1
+
     // Load the XML string into an XmlDocument
     let xmlDoc = XmlDocument()
     xmlDoc.Load(XmlReader.Create((new System.IO.StringReader(xmlString)), (buildXmlReaderSettings pXMLSettings)))
 
-    let rec readNode (node: XmlNode) : XMLNode =
+    let rec readNode (node: XmlNode, pNestingLevel: int) : XMLNode =
+        let nestingLevel = pNestingLevel + 1
         match node with
         | :? XmlComment as comment ->
-            counter.Increment("Comment")
+            counter.Increment("Comment", nestingLevel)
             { CommentNode = comment; Name = comment.Name; Value = comment.Value } |> Comment
         | :? XmlText as text ->
-            counter.Increment("Text")
+            counter.Increment("Text", nestingLevel)
             { TextNode = text; Name = text.Name; Value = text.Value} |> Text
         | :? XmlCDataSection as cdata -> 
-            counter.Increment("CDATA")
+            counter.Increment("CDATA", nestingLevel)
             { CDataNode = cdata; Name = cdata.Name; Value = cdata.Value } |> CData
         | :? XmlEntityReference as entityref ->
-            counter.Increment("EntityReference")
+            counter.Increment("EntityReference", nestingLevel)
             { EntityReferenceNode = entityref; Name = entityref.Name } |> EntityReference
         | :? XmlWhitespace as whitespace ->
-            counter.Increment("Whitespace")
+            counter.Increment("Whitespace", nestingLevel)
             { WhitespaceNode = whitespace; Name = whitespace.Name; Value = whitespace.Value } |> Whitespace
         | :? XmlSignificantWhitespace as sw ->
-            counter.Increment("SignificantWhitespace")
+            counter.Increment("SignificantWhitespace", nestingLevel)
             { SignificantWhitespaceNode = sw; Name = sw.Name; Value = sw.Value } |> SignificantWhitespace
         | :? XmlProcessingInstruction as pi ->
-            counter.Increment("ProcessingInstruction")
+            counter.Increment("ProcessingInstruction", nestingLevel)
             { ProcessingInstructionNode = pi; Name = pi.Name; Target = pi.Name; Data = pi.Value } |> ProcessingInstruction
         | :? XmlDocumentType as docType ->
             { DocumentTypeNode = docType; Name = docType.Name; PublicId = docType.PublicId; SystemId = docType.SystemId; InternalSubset = docType.InternalSubset } |> DocumentType
         | :? XmlEntity as entity->
-            counter.Increment("Entity")
+            counter.Increment("Entity", nestingLevel)
             { EntityNode = entity; Name = entity.Name; PublicId = entity.PublicId; SystemId = entity.SystemId; BaseUri = entity.BaseURI } |> Entity
         | :? XmlNotation as notation ->
-            counter.Increment("Notation")
+            counter.Increment("Notation", nestingLevel)
             { NotationNode = notation; Name = notation.Name; PublicId = notation.PublicId; SystemId = notation.SystemId; BaseUri = notation.BaseURI } |> Notation
         | :? XmlDeclaration as decl ->
-            counter.Increment("Declaration")
+            counter.Increment("Declaration", nestingLevel)
             { DeclarationNode = decl; Name = decl.Name; Version = decl.Version; Encoding = decl.Encoding; Standalone = decl.Standalone } |> Declaration
         | :? XmlDocument as doc ->
-            counter.Increment("Document")
-            { DocumentNode = doc; Name = doc.Name; Root = readNode doc.DocumentElement } |> Document
+            counter.Increment("Document", nestingLevel)
+            { DocumentNode = doc; Name = doc.Name; Root = (readNode( doc.DocumentElement, nestingLevel)) } |> Document
         | :? XmlDocumentFragment as docFrag ->
-            counter.Increment("DocumentFragment")
+            counter.Increment("DocumentFragment", nestingLevel)
             let children = ResizeArray<XMLNode>()
             for childNode in docFrag.ChildNodes do
-                children.Add(readNode childNode)
-            { DocumentFragmentNode = docFrag; Name = docFrag.Name; Children = if children.Count > 0 then Some (List.ofSeq children) else None } |> DocumentFragment
+                children.Add( readNode( childNode, nestingLevel))
+            { DocumentFragmentNode = docFrag; Name = docFrag.Name; 
+                                     Children = if children.Count > 0 then Some (List.ofSeq children) else None } |> DocumentFragment
         | :? XmlElement ->
             counter.Increment("Element")
             let name = node.Name
@@ -551,7 +560,7 @@ let readXml (xmlString: string) (pXMLSettings: XMLReaderSettings) : list<XMLNode
             let children = ResizeArray<XMLNode>()
             let mutable innerText = None
             for childNode in node.ChildNodes do
-                children.Add(readNode childNode)
+                children.Add(readNode( childNode, nestingLevel))
             { 
                 ElementNode = node :?> XmlElement
                 Name = name
@@ -563,7 +572,7 @@ let readXml (xmlString: string) (pXMLSettings: XMLReaderSettings) : list<XMLNode
                failwith $"Got XmlNodeType ({node.NodeType}) Expected one of: Element, Text, CDATA, Comment, ProcessingInstruction, Whitespace, SignificantWhitespace."
 
     // Start reading from the document element
-    nodes.Add(readNode xmlDoc.DocumentElement)
+    nodes.Add(readNode( xmlDoc.DocumentElement, nestingLevel))
 
     List.ofSeq nodes
 
@@ -764,6 +773,29 @@ let readXml (xmlString: string) (pXMLSettings: XMLReaderSettings) : list<XMLNode
 
 #!fsharp
 
+let validationEventHandler = ValidationEventHandler(fun sender args ->
+    let severity = match args.Severity with
+                   | XmlSeverityType.Warning -> "Warning"
+                   | XmlSeverityType.Error -> "Error"
+                   | _ -> "Unknown"
+
+    let lineInfo = 
+        match args.Exception with
+        | :? XmlSchemaException as schemaEx -> 
+            $"Line: {schemaEx.LineNumber}, Position: {schemaEx.LinePosition}"
+        | _ -> "No line information available"
+
+    let message = 
+        $"Severity: {severity}\n" +
+        $"Message: {args.Message}\n" +
+        $"Line Info: {lineInfo}\n" +
+        $"Exception: {args.Exception}"
+
+    Console.WriteLine(message + "\n\n")
+)
+
+#!fsharp
+
 open System.Xml
 open System.Xml.Schema
 
@@ -797,10 +829,18 @@ xliffFileBasedSchemaSet.Add( "http://www.w3.org/XML/1998/namespace",
 xliffFileBasedSchemaSet.Compile()
 
 let xmlReaderSettingsForXliffUsingFileBasedSchema = 
-    { defaultXMLReaderSettings with DtdProcessing = DtdProcessing.Parse;
-                                    Schemas = XmlSchemaSet();
-                                    XmlResolver = XliffXmlUrlResolver();
-                                    ValidationType = ValidationType.Schema }
+    { defaultXMLReaderSettings with 
+        DtdProcessing = DtdProcessing.Parse;
+        ValidationFlags = (*XmlSchemaValidationFlags.ProcessSchemaLocation 
+                          ||| *) XmlSchemaValidationFlags.ProcessInlineSchema
+                                 ||| XmlSchemaValidationFlags.ReportValidationWarnings;
+        Schemas = XmlSchemaSet();
+        ValidationType = ValidationType.Schema;
+        XmlResolver = XliffXmlUrlResolver();
+        ValidationEventHandler = validationEventHandler
+        ConformanceLevel = ConformanceLevel.Document
+
+    }
 
 #!fsharp
 
